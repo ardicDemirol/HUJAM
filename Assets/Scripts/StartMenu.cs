@@ -5,15 +5,38 @@ using UnityEngine.SceneManagement;
 
 public class StartMenu : MonoBehaviour
 {
-        public void PlayButton()
 
-        {
-            SceneManager.LoadScene(1);
-        }
+    int nextSceneIndex;
 
-        public void QuitButton()
+    private void Start()
+    {
+        nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
 
-        {
-            Application.Quit();
-        }
+    }
+    public void PlayButton()
+
+    {
+       
+        SceneManager.LoadScene(1);
+    }
+
+    public void QuitButton()
+
+    {
+        Application.Quit();
+    }
+
+    public void NextLevel()
+    {
+        SceneManager.LoadScene(nextSceneIndex);
+
+    }
+
 }
+        
+       
+
+        
+
+        
+
