@@ -35,14 +35,15 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        Move();
         Jump();
+        SpeedUp();
+       
     }
 
     private void FixedUpdate()
     {
-        Move();
-
-        SpeedUp();
+       
     }
 
 
@@ -59,18 +60,14 @@ public class PlayerController : MonoBehaviour
             spriteRenderer.flipX = true;
             rb.velocity = new Vector2(-1, 0);
             rb.AddForce(movement * currentSpeed * Time.deltaTime);
-            if (Input.GetKeyDown(KeyCode.Space) && rb.velocity.y == 0)
-            {
-            }
+
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
             spriteRenderer.flipX = false;
             rb.velocity = new Vector2(1, 0);
             rb.AddForce(movement * currentSpeed * Time.deltaTime);
-            if (Input.GetKeyDown(KeyCode.Space) && rb.velocity.y == 0)
-            {
-            }
+
         }
     }
 
