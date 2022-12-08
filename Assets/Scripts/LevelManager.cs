@@ -19,7 +19,6 @@ public class LevelManager : MonoBehaviour
     public void PlayButton()
 
     {
-
         SceneManager.LoadScene(1);
     }
 
@@ -32,7 +31,11 @@ public class LevelManager : MonoBehaviour
     public void NextLevel()
     {
         SceneManager.LoadScene(nextSceneIndex);
-
     }
+    public void Restart()
+    {
+        SceneManager.LoadScene(currentSceneIndex);
+    }
+
 
 }
