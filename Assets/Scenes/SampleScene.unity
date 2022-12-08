@@ -176,7 +176,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 1504329455}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Enemy
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -328,7 +328,7 @@ Transform:
   m_GameObject: {fileID: 1504329454}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.0041, y: -0.53, z: 0}
-  m_LocalScale: {x: 16.45285, y: 1, z: 1}
+  m_LocalScale: {x: 71.55458, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -341,29 +341,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2092789501, guid: cf7dbeab5f9916e43bf80cbbf569619b, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 143022012792154710, guid: cf7dbeab5f9916e43bf80cbbf569619b, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 143022012792154713, guid: cf7dbeab5f9916e43bf80cbbf569619b, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 143022012792154713, guid: cf7dbeab5f9916e43bf80cbbf569619b, type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 143022012792154714, guid: cf7dbeab5f9916e43bf80cbbf569619b, type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 143022012792154715, guid: cf7dbeab5f9916e43bf80cbbf569619b, type: 3}
       propertyPath: runSpeed
-      value: 10
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 143022012792154715, guid: cf7dbeab5f9916e43bf80cbbf569619b, type: 3}
       propertyPath: jumpPower
@@ -371,7 +355,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 143022012792154715, guid: cf7dbeab5f9916e43bf80cbbf569619b, type: 3}
       propertyPath: walkSpeed
-      value: 5
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 143022012792154717, guid: cf7dbeab5f9916e43bf80cbbf569619b, type: 3}
       propertyPath: m_RootOrder
@@ -379,7 +363,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 143022012792154717, guid: cf7dbeab5f9916e43bf80cbbf569619b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.61
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 143022012792154717, guid: cf7dbeab5f9916e43bf80cbbf569619b, type: 3}
       propertyPath: m_LocalPosition.y

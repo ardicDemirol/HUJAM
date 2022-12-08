@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float walkSpeed = 10f;
     [SerializeField] private float runSpeed = 20f;
     [SerializeField] float jumpPower = 100f;
+
     
     
 
@@ -34,13 +35,13 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-
+        Jump();
     }
 
     private void FixedUpdate()
     {
         Move();
-        Jump();
+
         SpeedUp();
     }
 
@@ -58,9 +59,8 @@ public class PlayerController : MonoBehaviour
             spriteRenderer.flipX = true;
             rb.velocity = new Vector2(-1, 0);
             rb.AddForce(movement * currentSpeed * Time.deltaTime);
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) && rb.velocity.y == 0)
             {
-                //
             }
         }
         if (Input.GetKeyDown(KeyCode.D))
@@ -68,6 +68,9 @@ public class PlayerController : MonoBehaviour
             spriteRenderer.flipX = false;
             rb.velocity = new Vector2(1, 0);
             rb.AddForce(movement * currentSpeed * Time.deltaTime);
+            if (Input.GetKeyDown(KeyCode.Space) && rb.velocity.y == 0)
+            {
+            }
         }
     }
 
@@ -79,6 +82,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && rb.velocity.y == 0)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+            
             Debug.Log("zýplýyorum");
 
         }
@@ -88,6 +92,7 @@ public class PlayerController : MonoBehaviour
             
             Debug.Log("Düþüyorum");
         }
+
     }
 
     void SpeedUp()
@@ -109,12 +114,18 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if(collision.gameObject.tag == "")
+        {
 
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if(collision.gameObject.tag == "")
+        {
 
+        }
     }
 
 
