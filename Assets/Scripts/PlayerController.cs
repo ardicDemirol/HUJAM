@@ -9,10 +9,13 @@ public class PlayerController : MonoBehaviour
     float currentSpeed = 1f;
     [SerializeField] private float walkSpeed = 10f;
     [SerializeField] private float runSpeed = 20f;
-    [SerializeField] float jumpPower;
+    [SerializeField] float jumpPower = 100f;
+    
+    
 
     private SpriteRenderer spriteRenderer;
     private Vector2 movement;
+
 
 
 
@@ -31,10 +34,14 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+
+    }
+
+    private void FixedUpdate()
+    {
         Move();
         Jump();
         SpeedUp();
-        //Flip();
     }
 
 
@@ -43,34 +50,43 @@ public class PlayerController : MonoBehaviour
     {
 
         float x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Vertical");
+        movement = new Vector2(x, 0);
 
-        movement = new Vector2(x, y);
 
         if (Input.GetKeyDown(KeyCode.A))
         {
             spriteRenderer.flipX = true;
-            rb.velocity = new Vector2(0, 0);
-            rb.AddForce(movement * currentSpeed * Time.deltaTime,ForceMode2D.Impulse);
+            rb.velocity = new Vector2(-1, 0);
+            rb.AddForce(movement * currentSpeed * Time.deltaTime);
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                //
+            }
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
             spriteRenderer.flipX = false;
-            rb.velocity = new Vector2(0,0);
-            rb.AddForce(movement * currentSpeed * Time.deltaTime,ForceMode2D.Impulse);
+            rb.velocity = new Vector2(1, 0);
+            rb.AddForce(movement * currentSpeed * Time.deltaTime);
         }
-       
     }
 
 
 
     void Jump()
     {
-        if (Input.GetKey(KeyCode.Space) && rb.velocity.y == 0)
+        rb.gravityScale = 0.85f;
+        if (Input.GetKeyDown(KeyCode.Space) && rb.velocity.y == 0)
         {
-            //rb.AddForce(transform.up * jumpPower * Time.deltaTime);
-            rb.AddForce(new Vector2(0f, 100f) * jumpPower * Time.deltaTime);
-            Debug.Log("space");
+            rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+            Debug.Log("zýplýyorum");
+
+        }
+        else if(rb.velocity.y < -0.1f)
+        {
+            rb.gravityScale = 3f;
+            
+            Debug.Log("Düþüyorum");
         }
     }
 
@@ -80,30 +96,15 @@ public class PlayerController : MonoBehaviour
         {
             currentSpeed = runSpeed;
             rb.AddForce(movement * currentSpeed * Time.deltaTime, ForceMode2D.Impulse);
-            Debug.Log("leftShift");
         }
         else
         {
             currentSpeed = walkSpeed;
             rb.AddForce(movement * currentSpeed * Time.deltaTime, ForceMode2D.Impulse);
-            Debug.Log("else");
         }
     }
 
 
-    void Flip()
-    {
-
-        if (movement.x < 0)
-        {
-            spriteRenderer.flipX = true;
-
-            if(movement.x > 0)
-            {
-                spriteRenderer.flipX = false;
-            }
-        }
-    }
 
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -115,4 +116,6 @@ public class PlayerController : MonoBehaviour
     {
 
     }
+
+
 }
