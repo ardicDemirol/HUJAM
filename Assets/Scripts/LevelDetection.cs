@@ -10,12 +10,9 @@ public class LevelDetection : MonoBehaviour
         {
             Destroy(other.gameObject);
             Debug.Log("gvbg");
+
         }
 
     }
 
-
-
 }
-
-
