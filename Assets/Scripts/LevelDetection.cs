@@ -5,7 +5,7 @@ using UnityEngine;
 public class LevelDetection : MonoBehaviour
 {
 
-    [SerializeField] GameObject panel;
+    [SerializeField] GameObject deathScreen;
     private void OnTriggerEnter2D(Collider2D other)
     {
        
@@ -14,7 +14,7 @@ public class LevelDetection : MonoBehaviour
         {
             Destroy(other.gameObject);
             Debug.Log("gvbg");
-            panel.SetActive(true);
+            deathScreen.SetActive(true);
             
         
         }

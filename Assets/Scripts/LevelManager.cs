@@ -16,13 +16,13 @@ public class LevelManager : MonoBehaviour
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
     }
-    public void PlayButton()
+    public void Play()
 
     {
         SceneManager.LoadScene(1);
     }
 
-    public void QuitButton()
+    public void Quit()
 
     {
         Application.Quit();
@@ -32,7 +32,7 @@ public class LevelManager : MonoBehaviour
     {
         SceneManager.LoadScene(nextSceneIndex);
     }
-    public void Restart()
+    public void RestartLevel()
     {
         SceneManager.LoadScene(currentSceneIndex);
     }
