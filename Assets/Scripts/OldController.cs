@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class PlayerController : MonoBehaviour
+public class OldController : MonoBehaviour
 {
-
     [SerializeField] Rigidbody2D rb;
     float currentSpeed = 1f;
     [SerializeField] private float walkSpeed = 10f;
@@ -36,12 +34,13 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * currentSpeed * Time.fixedDeltaTime);
+
     }
 
     void Update()
     {
         Move();
+        Jump();
         SpeedUp();
     }
 
@@ -51,30 +50,24 @@ public class PlayerController : MonoBehaviour
     void Move()
     {
 
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        float x = Input.GetAxis("Horizontal");
 
-        rb.velocity = new Vector2(movement.x, movement.y);
+        movement = new Vector2(x, 0);
 
-        FlipCharcter();
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            spriteRenderer.flipX = true;
+            movement = new Vector2(-1, 0);
+            rb.AddForce(movement * currentSpeed * Time.deltaTime);
 
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            spriteRenderer.flipX = false;
+            movement = new Vector2(1, 0);
+            rb.AddForce(movement * currentSpeed * Time.deltaTime);
 
-        //if (Input.GetKeyDown(KeyCode.A))
-        //{
-        //    spriteRenderer.flipX = true;
-        //    //movement = new Vector2(-1,0);
-        //    rb.velocity = Vector2.zero;
-        //    rb.AddForce(movement * currentSpeed * Time.deltaTime);
-
-        //}
-        //if (Input.GetKey(KeyCode.D))
-        //{
-        //    spriteRenderer.flipX = false;
-        //    //movement = new Vector2(1,0);
-        //    rb.velocity = Vector2.zero;
-        //    rb.AddForce(movement * currentSpeed * Time.deltaTime);
-
-        //}
+        }
 
     }
 
@@ -121,18 +114,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void FlipCharcter()
-    {
-        if (movement.x < 0)
-        {
-            spriteRenderer.flipX = true;
-        }
-        else
-        {
-            spriteRenderer.flipX = false;
-        }
-    }
-
 
 
 
@@ -154,6 +135,4 @@ public class PlayerController : MonoBehaviour
 
         }
     }
-
-
 }
