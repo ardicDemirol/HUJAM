@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerController : MonoBehaviour
 {
 
@@ -11,8 +12,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float runSpeed = 20f;
     [SerializeField] float jumpPower = 100f;
 
-    
-    
+
+
 
     private SpriteRenderer spriteRenderer;
     private Vector2 movement;
@@ -33,18 +34,18 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    private void FixedUpdate()
+    {
+
+    }
+
     void Update()
     {
         Move();
         Jump();
         SpeedUp();
-       
     }
 
-    private void FixedUpdate()
-    {
-       
-    }
 
 
 
@@ -54,39 +55,47 @@ public class PlayerController : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         movement = new Vector2(x, 0);
 
-
         if (Input.GetKeyDown(KeyCode.A))
         {
             spriteRenderer.flipX = true;
-            rb.velocity = new Vector2(-1, 0);
+            movement = new Vector2(-1,0);
             rb.AddForce(movement * currentSpeed * Time.deltaTime);
 
         }
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKey(KeyCode.D))
         {
             spriteRenderer.flipX = false;
-            rb.velocity = new Vector2(1, 0);
+            movement = new Vector2(1,0);
             rb.AddForce(movement * currentSpeed * Time.deltaTime);
 
         }
+
     }
 
 
 
     void Jump()
     {
-        rb.gravityScale = 0.85f;
         if (Input.GetKeyDown(KeyCode.Space) && rb.velocity.y == 0)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpPower);
-            
-            Debug.Log("zýplýyorum");
+            rb.gravityScale = 0.85f;
+            movement = new Vector2(rb.velocity.x, jumpPower);
+
+            if (rb.velocity.x >= 0)
+            {
+                rb.AddForce(movement * Time.deltaTime);
+
+            }
+            if (rb.velocity.x < 0)
+            {
+                rb.AddForce(-movement * Time.deltaTime);
+            }
 
         }
-        else if(rb.velocity.y < -0.1f)
+        else if (rb.velocity.y < -0.1f)
         {
             rb.gravityScale = 3f;
-            
+
             Debug.Log("Düþüyorum");
         }
 
@@ -109,9 +118,12 @@ public class PlayerController : MonoBehaviour
 
 
 
+
+
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "")
+        if (collision.gameObject.tag == "")
         {
 
         }
@@ -119,11 +131,11 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "")
+        if (collision.gameObject.tag == "")
         {
 
         }
     }
 
-    
+
 }
