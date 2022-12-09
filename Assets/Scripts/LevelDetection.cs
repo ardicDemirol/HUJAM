@@ -14,11 +14,10 @@ public class LevelDetection : MonoBehaviour
         {
             Destroy(other.gameObject);
             Debug.Log("gvbg");
-            deathScreen.SetActive(true);
-            
-        
+            deathScreen.SetActive(true);      
         }
        
+
 
     }
 

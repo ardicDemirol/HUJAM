@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
 
-
+    [SerializeField] GameObject pauseScreen;
     int nextSceneIndex;
     int currentSceneIndex;
 
@@ -36,6 +36,14 @@ public class LevelManager : MonoBehaviour
     {
         SceneManager.LoadScene(currentSceneIndex);
     }
+
+    private void Update()
+    {
+       
+    }
+
+
+
 
 
 }
