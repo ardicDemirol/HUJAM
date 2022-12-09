@@ -6,12 +6,14 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
 
-    [SerializeField] GameObject pauseScreen;
     int nextSceneIndex;
     int currentSceneIndex;
 
+    Pause pause;
+
     private void Start()
     {
+        pause = GetComponent<Pause>();
         nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
@@ -37,10 +39,9 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene(currentSceneIndex);
     }
 
-    private void Update()
-    {
-       
-    }
+
+
+
 
 
 
