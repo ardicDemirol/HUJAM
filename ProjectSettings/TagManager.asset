@@ -47,6 +47,9 @@ TagManager:
   - name: Background
     uniqueID: 3208560117
     locked: 0
+  - name: Teleport
+    uniqueID: 3144633359
+    locked: 0
   - name: Platform
     uniqueID: 1403679975
     locked: 0
