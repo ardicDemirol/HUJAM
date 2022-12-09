@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Move();
-        AnimatonChanger();
+        //AnimatonChanger();
 
     }
 
@@ -65,23 +65,23 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    void AnimatonChanger()
-    {
+    //void AnimatonChanger()
+    //{
 
-        if (Input.GetKey(KeyCode.W))
-        {
-            animator.SetBool("idle", false);
-            animator.SetBool("RunUp", true);
-            animator.SetBool("RunDown",false);
-        }
-        if(Input.GetKey(KeyCode.S))
-        {
-            animator.SetBool("idle", false);
-            animator.SetBool("RunUp", false);
-            animator.SetBool("RunDown", true);
+    //    if (Input.GetKey(KeyCode.W))
+    //    {
+    //        animator.SetBool("idle", false);
+    //        animator.SetBool("RunUp", true);
+    //        animator.SetBool("RunDown",false);
+    //    }
+    //    if(Input.GetKey(KeyCode.S))
+    //    {
+    //        animator.SetBool("idle", false);
+    //        animator.SetBool("RunUp", false);
+    //        animator.SetBool("RunDown", true);
 
-        }
-    }
+    //    }
+    //}
 
     private void FlipCharcter()
     {
