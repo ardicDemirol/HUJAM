@@ -13,10 +13,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float jumpPower = 100f;
 
 
-
-
     private SpriteRenderer spriteRenderer;
     private Vector2 movement;
+    private Animator animator;
 
 
 
@@ -24,9 +23,10 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        currentSpeed = walkSpeed;
+        currentSpeed = runSpeed;
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     void Start()
@@ -42,7 +42,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Move();
-        SpeedUp();
+        AnimatonChanger();
+
     }
 
 
@@ -50,74 +51,35 @@ public class PlayerController : MonoBehaviour
 
     void Move()
     {
+        //animator.SetBool("idle",true);
 
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
         rb.velocity = new Vector2(movement.x, movement.y);
 
+
+
+
         FlipCharcter();
-
-
-        //if (Input.GetKeyDown(KeyCode.A))
-        //{
-        //    spriteRenderer.flipX = true;
-        //    //movement = new Vector2(-1,0);
-        //    rb.velocity = Vector2.zero;
-        //    rb.AddForce(movement * currentSpeed * Time.deltaTime);
-
-        //}
-        //if (Input.GetKey(KeyCode.D))
-        //{
-        //    spriteRenderer.flipX = false;
-        //    //movement = new Vector2(1,0);
-        //    rb.velocity = Vector2.zero;
-        //    rb.AddForce(movement * currentSpeed * Time.deltaTime);
-
-        //}
-
     }
 
 
-
-    void Jump()
+    void AnimatonChanger()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && rb.velocity.y == 0)
+
+        if (Input.GetKey(KeyCode.W))
         {
-            rb.gravityScale = 0.85f;
-            movement = new Vector2(rb.velocity.x, jumpPower);
-
-            if (rb.velocity.x >= 0)
-            {
-                rb.AddForce(movement * Time.deltaTime);
-
-            }
-            if (rb.velocity.x < 0)
-            {
-                rb.AddForce(-movement * Time.deltaTime);
-            }
-
+            animator.SetBool("idle", false);
+            animator.SetBool("RunUp", true);
+            animator.SetBool("RunDown",false);
         }
-        else if (rb.velocity.y < -0.1f)
+        if(Input.GetKey(KeyCode.S))
         {
-            rb.gravityScale = 3f;
+            animator.SetBool("idle", false);
+            animator.SetBool("RunUp", false);
+            animator.SetBool("RunDown", true);
 
-            Debug.Log("Düþüyorum");
-        }
-
-    }
-
-    void SpeedUp()
-    {
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            currentSpeed = runSpeed;
-            rb.AddForce(movement * currentSpeed * Time.deltaTime, ForceMode2D.Impulse);
-        }
-        else
-        {
-            currentSpeed = walkSpeed;
-            rb.AddForce(movement * currentSpeed * Time.deltaTime, ForceMode2D.Impulse);
         }
     }
 
@@ -125,13 +87,14 @@ public class PlayerController : MonoBehaviour
     {
         if (movement.x < 0)
         {
-            spriteRenderer.flipX = true;
+            spriteRenderer.flipX = false;
         }
         else
         {
-            spriteRenderer.flipX = false;
+            spriteRenderer.flipX = true;
         }
     }
+
 
 
 
