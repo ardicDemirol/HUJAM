@@ -11,17 +11,12 @@ public class Bullet : MonoBehaviour
     {
         GameObject clone = Instantiate(hitEffect, transform.position, Quaternion.identity);
         Destroy(clone,1f);
+        Destroy(gameObject);
 
         if (collision.gameObject.tag == "Enemy")
         {
-            Destroy(gameObject);
             Debug.Log("Enemy");
         }       
-
-
     }
-
-
-
 
 }
