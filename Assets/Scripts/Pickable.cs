@@ -24,7 +24,7 @@ public class Pickable : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(bull);
+        //Debug.Log(bull);
     }
 
 

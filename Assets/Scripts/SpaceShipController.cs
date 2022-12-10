@@ -4,24 +4,41 @@ using UnityEngine;
 
 public class SpaceShipController : MonoBehaviour
 {
-    [SerializeField] float speed = 5f;
-    [SerializeField] Transform target;
 
-    void Start()
+    [SerializeField] float moveSpeed = 5f;
+
+    private Vector3 rotation;
+
+    [SerializeField] float rotate = 10f;
+
+      
+    private void Start()
     {
-           
+        
     }
 
     void Update()
     {
-        FollowMouse();
+       Turn();
     }
 
-    void FollowMouse()
+    private void FixedUpdate()
     {
-        Vector2 direction  = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, speed * Time.deltaTime);
+
+        
+    }
+
+    void Turn()
+    {
+        if (Input.GetKey(KeyCode.D))
+        {
+            rotation = new Vector3(0, 0, -rotate);
+            transform.Rotate(rotation * Time.deltaTime * moveSpeed);
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            rotation = new Vector3(0, 0, rotate);
+            transform.Rotate(rotation * Time.deltaTime * moveSpeed);
+        }
     }
 }
