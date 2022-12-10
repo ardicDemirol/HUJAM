@@ -5,8 +5,10 @@ using UnityEngine;
 public class Pause : MonoBehaviour
 {
     public static bool isPaused = false;
+    
 
     [SerializeField] GameObject pauseMenu;
+    [SerializeField] GameObject timeHud;
 
     private void Start()
     {

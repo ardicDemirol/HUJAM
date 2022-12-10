@@ -18,6 +18,11 @@ public class LevelManager : MonoBehaviour
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
     }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
     public void Play()
 
     {

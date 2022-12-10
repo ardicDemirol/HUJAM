@@ -6,18 +6,28 @@ public class Pickable : MonoBehaviour
 {
 
 
+    PlayerController playerController;
+    int bull;
+    
 
-    void Start()
+    private void Awake()
     {
-    }
-
-    void Update()
-    {
+        playerController = GetComponent<PlayerController>();
         
+
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Start()
     {
-
+        //bull = playerController.GetBullet;
     }
+
+    private void Update()
+    {
+        Debug.Log(bull);
+    }
+
+
+
+
 }

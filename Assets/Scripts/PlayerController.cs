@@ -21,7 +21,11 @@ public class PlayerController : MonoBehaviour
     private Vector2 movement;
     private Animator animator;
 
-
+    public int GetBullet
+    {
+        get { return currentBullet; }
+        set { currentBullet = value; }
+    }
 
 
 
@@ -125,5 +129,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
+  
 
 }
