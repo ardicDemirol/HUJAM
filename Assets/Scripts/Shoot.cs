@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Shoot : MonoBehaviour
 {
-
     public Transform[] firePoints;
     public GameObject bulletPrefab;
 
@@ -14,21 +13,21 @@ public class Bullet : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            Shoot();
+            ShootBullet();
         }
     }
 
 
     void Update()
     {
-        
+
     }
 
 
-    void Shoot()
+    void ShootBullet()
     {
-        
-        for(int j = 0; j < firePoints.Length; j++)
+
+        for (int j = 0; j < firePoints.Length; j++)
         {
             GameObject bullet = Instantiate(bulletPrefab, firePoints[j].position, firePoints[j].rotation);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
