@@ -12,6 +12,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float runSpeed = 20f;
     [SerializeField] float jumpPower = 100f;
 
+    private int bullet = 10;
+
+    private int currentBullet = 100;
+
 
     private SpriteRenderer spriteRenderer;
     private Vector2 movement;
@@ -106,15 +110,18 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "")
         {
+            
 
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "")
+        if (collision.gameObject.tag == "Pickable")
         {
-
+            Destroy(collision.gameObject);
+            currentBullet += bullet;
+            Debug.Log(currentBullet);
         }
     }
 
