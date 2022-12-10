@@ -11,7 +11,7 @@ public class Password : MonoBehaviour
     [SerializeField] GameObject passwordScreen;
 
     public TextMeshProUGUI passwordText;
-    string password = "1234";
+    string password = "2514";
 
     private int nextSceneIndex;
     Pause pause;
