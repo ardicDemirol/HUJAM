@@ -3,50 +3,66 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Password : MonoBehaviour
 {
-    int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+
     [SerializeField] GameObject passwordScreen;
 
-    public Text passwordText;
-    [SerializeField] Text password ;
-    
+    public TextMeshProUGUI passwordText;
+    string password = "1234";
+
+    private int nextSceneIndex;
+    Pause pause;
+
+    private void Start()
+    {
+        nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        pause = GetComponent<Pause>();
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
             passwordScreen.SetActive(true);
             Debug.Log("carpti");
+            pause.PauseGame();
         }
     }
 
     public void KeyButton(string key)
     {
-        passwordText.text=passwordText.text + key;
-        
+        passwordText.text += key;
+        Debug.Log(passwordText.text);
+
+
     }
 
     public void ResetPassword()
     {
         passwordText.text = "";
-
-
     }
 
     public void CheckPassword()
     {
-        if(passwordText==password)
+
+
+        string newPassword = passwordText.text.ToString();
+
+        if (newPassword == password)
         {
             SceneManager.LoadScene(nextSceneIndex);
+            
         }
         else
         {
             ResetPassword();
+            
         }
 
     }
 
-  
+
 }
