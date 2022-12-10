@@ -4,37 +4,15 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public GameObject hitEffect;
 
-    public Transform[] firePoints;
-    public GameObject bulletPrefab;
-
-    public float bulletForce = 20f;
-
-    void Start()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (Input.GetMouseButton(0))
-        {
-            Shoot();
-        }
+        Instantiate(hitEffect,transform.position,Quaternion.identity);
+        Destroy(hitEffect, 5f);
+        Destroy(gameObject);
+
     }
 
-
-    void Update()
-    {
-        
-    }
-
-
-    void Shoot()
-    {
-        
-        for(int j = 0; j < firePoints.Length; j++)
-        {
-            GameObject bullet = Instantiate(bulletPrefab, firePoints[j].position, firePoints[j].rotation);
-            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-            rb.AddForce(firePoints[j].up * bulletForce, ForceMode2D.Impulse);
-
-        }
-    }
 
 }

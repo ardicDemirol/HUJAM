@@ -11,16 +11,16 @@ public class Shoot : MonoBehaviour
 
     void Start()
     {
-        if (Input.GetMouseButton(0))
-        {
-            ShootBullet();
-        }
+        
     }
 
 
     void Update()
     {
-
+        if (Input.GetMouseButtonDown(0))
+        {
+            ShootBullet();
+        }
     }
 
 

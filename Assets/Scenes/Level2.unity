@@ -699,7 +699,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 754158434}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10.98}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -807,6 +807,7 @@ GameObject:
   - component: {fileID: 1010352809}
   - component: {fileID: 1010352811}
   - component: {fileID: 1010352812}
+  - component: {fileID: 1010352813}
   m_Layer: 0
   m_Name: SpaceShip
   m_TagString: Player
@@ -853,7 +854,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1453675381
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9766c68944302354994f7db0db397e2a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -918,6 +919,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1010352813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010352808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7af6f3be7cdc7ce409c0a3fc3a33f0c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoints:
+  - {fileID: 1533390061}
+  - {fileID: 41102946}
+  bulletPrefab: {fileID: 1813912876268671992, guid: 72ed3df1941ffcf4c8a80e95146d0ade, type: 3}
+  bulletForce: 20
 --- !u!1 &1292836247
 GameObject:
   m_ObjectHideFlags: 0
@@ -1344,8 +1362,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1567657210}
   m_LocalRotation: {x: -0, y: -0, z: -0.35886702, w: 0.9333887}
-  m_LocalPosition: {x: 12.03, y: 6.8, z: 0}
-  m_LocalScale: {x: 7, y: 7, z: 1}
+  m_LocalPosition: {x: 10.35, y: 5.54, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1846009520}

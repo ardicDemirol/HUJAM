@@ -57,6 +57,9 @@ TagManager:
   - name: Pickable
     uniqueID: 843323877
     locked: 0
+  - name: Bullet
+    uniqueID: 3803904809
+    locked: 0
   - name: Player
     uniqueID: 1453675381
     locked: 0
