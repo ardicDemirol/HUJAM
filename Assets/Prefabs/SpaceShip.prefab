@@ -167,6 +167,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 20
   rotate: 10
+  maxHealth: 10
+  deathScreen: {fileID: 0}
+  healthBar: {fileID: 0}
+  audioSource: {fileID: 460108289}
+  deathSound: {fileID: 8300000, guid: d2fc8094bc07b1b4199af2382e831161, type: 3}
+  winSound: {fileID: 8300000, guid: 28f28e3f8bd350b45b70e812293961f0, type: 3}
 --- !u!114 &7042407720381053710
 MonoBehaviour:
   m_ObjectHideFlags: 0
