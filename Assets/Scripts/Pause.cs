@@ -37,13 +37,11 @@ public class Pause : MonoBehaviour
 
     public void ResumeGame()
     {
-        if (currentSceneIndex)
-        {
-
-        }
+        
+        isPaused = false;
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
-        isPaused = false;
+        
         
     }
 
