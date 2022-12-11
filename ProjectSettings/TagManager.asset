@@ -7,9 +7,9 @@ TagManager:
   - Enemy
   - Platform
   - Teleport
-  - Pickable
   - Bullet
   - Wall
+  - Laser
   layers:
   - Default
   - TransparentFX
