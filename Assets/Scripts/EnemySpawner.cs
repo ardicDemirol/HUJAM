@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class EnemySpawner : MonoBehaviour
 {
 
     //[SerializeField] float speed;
@@ -14,7 +14,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] GameObject[] enemyPrefab = new GameObject[4];
 
 
-    [SerializeField] float spawnTime = 2f;
+    [SerializeField] float spawnTime = 8f;
     private float timer = 5f;
 
 
@@ -34,10 +34,10 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        EnemySpawner();
+        Spawner();
     }
 
-    private void EnemySpawner()
+    private void Spawner()
     {
         if (timer >= spawnTime)
         {
@@ -53,9 +53,6 @@ public class EnemyController : MonoBehaviour
                     Instantiate(enemyPrefab[enemyIndex], spawnPositions[positionIndex].transform.position, Quaternion.identity);
 
                 }
-                
-                // rigidbody.AddForce(1f, downSpeed, 1f, ForceMode.Impulse);
-
             }
             timer = 0f;
 

@@ -75,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: -430422019
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4f080df9f6498934ca2e3817eab6b935, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 3d918dc4cde88c547817ebc520cc061d, type: 3}
+  m_Color: {r: 0, g: 1, b: 0.9529412, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -98,7 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7899e3ed4314b245aadfde5e715adf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: 2
+  enemyHealth: 4
+  explosionEffect: {fileID: 6623116922197127857, guid: 336fe4a0a3ecb4b4d82c88010f8f9034, type: 3}
+  explosionEffect2: {fileID: 6623116922197127857, guid: 1f9c30b21dd3e8645bdc3adf1b0900e4, type: 3}
 --- !u!58 &4967021694331501009
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -109,9 +111,9 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.15
+  m_Radius: 0.77

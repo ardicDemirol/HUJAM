@@ -9,9 +9,12 @@ public class Shoot : MonoBehaviour
 
     public float bulletForce = 20f;
 
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip fireSound;
+
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
 
@@ -20,6 +23,8 @@ public class Shoot : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             ShootBullet();
+            audioSource.PlayOneShot(fireSound);
+            
         }
     }
 
