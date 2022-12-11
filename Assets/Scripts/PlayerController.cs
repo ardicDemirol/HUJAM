@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
         set { currentBullet = value; }
     }
 
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip deathSound;
 
 
     private void Awake()
@@ -41,7 +43,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void FixedUpdate()
@@ -108,6 +110,7 @@ public class PlayerController : MonoBehaviour
             // Ölme Efekti;
             deathScreen.SetActive(true);
             Destroy(gameObject);
+            audioSource.PlayOneShot(deathSound);
         }
     }
 
