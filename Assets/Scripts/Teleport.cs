@@ -10,9 +10,11 @@ public class Teleport : MonoBehaviour
     private float waitTime = 1f;
     private bool teleport = true;
 
+    private Rigidbody2D rigidbody;
+
     void Start()
     {
-
+        rigidbody = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -94,6 +96,7 @@ public class Teleport : MonoBehaviour
 
     void CanTeleport()
     {
+        rigidbody.velocity = Vector2.zero;
         teleport = true;
     }
 

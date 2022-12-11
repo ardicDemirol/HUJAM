@@ -70,7 +70,7 @@ public class SpaceShipController : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
             damage = UnityEngine.Random.Range(1, 6);
-            currentHealth -= damage;
+            currentHealth -= damage; 
             healthBar.fillAmount -= damage/20;
         }
     }
