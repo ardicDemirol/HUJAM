@@ -11,6 +11,7 @@ public class FollowEnemy : MonoBehaviour
     [SerializeField] GameObject explosionEffect;
     [SerializeField] GameObject explosionEffect2;
 
+    public float count;
 
     void Awake()
     {
@@ -35,9 +36,11 @@ public class FollowEnemy : MonoBehaviour
             enemyHealth -= 1;
             if (enemyHealth < 0)
             {
+                Count();
                 Destroy(gameObject);
                 GameObject explosionEffectClone = Instantiate(explosionEffect, transform.position, Quaternion.identity);
                 Destroy(explosionEffectClone, 0.2f);
+                
             }
         }
         if(collision.gameObject.tag == "Player")
@@ -49,6 +52,12 @@ public class FollowEnemy : MonoBehaviour
         }
     }
 
+
+    public float Count()
+    {
+        count /= 100;
+        return count;
+    }
    
 
 

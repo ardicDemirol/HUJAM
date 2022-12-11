@@ -29,6 +29,7 @@ public class Bullet : MonoBehaviour
             GameObject clone = Instantiate(hitEffect, transform.position, Quaternion.identity);
             Destroy(clone, 0.3f);
             Destroy(gameObject);
+
         }
         if(collision.gameObject.tag == "Wall") { Destroy(gameObject); }
         

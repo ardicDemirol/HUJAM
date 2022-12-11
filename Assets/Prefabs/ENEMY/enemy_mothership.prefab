@@ -101,6 +101,7 @@ MonoBehaviour:
   enemyHealth: 4
   explosionEffect: {fileID: 6623116922197127857, guid: 336fe4a0a3ecb4b4d82c88010f8f9034, type: 3}
   explosionEffect2: {fileID: 6623116922197127857, guid: 1f9c30b21dd3e8645bdc3adf1b0900e4, type: 3}
+  count: 4
 --- !u!58 &4967021694331501009
 CircleCollider2D:
   m_ObjectHideFlags: 0

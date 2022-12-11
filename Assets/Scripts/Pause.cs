@@ -31,7 +31,6 @@ public class Pause : MonoBehaviour
             }
         }
 
-        Debug.Log(isPaused);
     }
 
 

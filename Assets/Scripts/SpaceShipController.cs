@@ -12,25 +12,36 @@ public class SpaceShipController : MonoBehaviour
 
 
     [SerializeField] int maxHealth = 100;
-    private int currentHealth;
-    private int damage;
+    private float currentHealth;
+    private float damage;
 
 
 
     [SerializeField] private GameObject deathScreen;
     [SerializeField] private Image healthBar;
 
+    private float duration;
+    private float enemyCount;
+
+    private FollowEnemy enemy;
+    private LevelManager levelManager;
 
 
     private void Start()
     {
+        enemy = GetComponent<FollowEnemy>();
+        levelManager = GetComponent<LevelManager>();
         currentHealth = maxHealth;
     }
 
     void Update()
     {
+        duration = Time.deltaTime / 50;
+
         Turn();
         Die();
+        Win();
+        Bar();
     }
 
 
@@ -56,18 +67,35 @@ public class SpaceShipController : MonoBehaviour
         {
             damage = UnityEngine.Random.Range(1, 6);
             currentHealth -= damage;
-            Debug.Log(currentHealth);
         }
     }
 
 
     void Die()
     {
-        if (currentHealth < 0)
+        if (currentHealth < 0 || healthBar.fillAmount <= 0.02f)
         {
             Destroy(gameObject);
             deathScreen.SetActive(true);
-            
         }
+    }
+
+    void Win()
+    {
+        if (healthBar.fillAmount >= 0.99f)
+        {
+            levelManager.NextLevel();
+        }
+        
+    }
+
+
+    void Bar()
+    {
+        
+        healthBar.fillAmount -= duration;
+
+       
+
     }
 }
