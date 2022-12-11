@@ -125,8 +125,6 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Pickable")
         {
             Destroy(collision.gameObject);
-            currentBullet += bullet;
-            Debug.Log(currentBullet);
         }
     }
 
