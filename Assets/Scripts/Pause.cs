@@ -12,11 +12,9 @@ public class Pause : MonoBehaviour
     [SerializeField] GameObject timeHud;
 
 
-    int currentSceneIndex;
-
     private void Start()
     {
-        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        isPaused = false;
     }
 
     private void Update()
@@ -32,12 +30,13 @@ public class Pause : MonoBehaviour
                 PauseGame();
             }
         }
+
+        Debug.Log(isPaused);
     }
 
 
     public void ResumeGame()
     {
-        
         isPaused = false;
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;

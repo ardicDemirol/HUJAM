@@ -9,11 +9,10 @@ public class LevelManager : MonoBehaviour
     int nextSceneIndex;
     int currentSceneIndex;
 
-    Pause pause;
 
     private void Start()
     {
-        pause = GetComponent<Pause>();
+
         nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
@@ -41,11 +40,7 @@ public class LevelManager : MonoBehaviour
     }
     public void RestartLevel()
     {
-        pause.ResumeGame();
-        pause.pauseMenu.SetActive(false);
         SceneManager.LoadScene(currentSceneIndex);
-        
-
     }
 
 
