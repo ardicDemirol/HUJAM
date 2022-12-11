@@ -33,18 +33,21 @@ public class Teleport : MonoBehaviour
             {
                 teleport = false;
                 transform.position = teleportPoints[4].transform.position;
+                rigidbody.velocity = Vector2.zero;
                 Invoke(nameof(CanTeleport), waitTime);
             }
             if (other.gameObject.name == "1" && teleport)
             {
                 teleport = false;
                 transform.position = teleportPoints[10].transform.position;
+                rigidbody.velocity = Vector2.zero;
                 Invoke(nameof(CanTeleport), waitTime);
             }
             if (other.gameObject.name == "2" && teleport)
             {
                 teleport = false;
                 transform.position = teleportPoints[0].transform.position;
+                rigidbody.velocity = Vector2.zero;
                 Invoke(nameof(CanTeleport), waitTime);
             }
           
@@ -52,41 +55,48 @@ public class Teleport : MonoBehaviour
             {
                 teleport = false;
                 transform.position = teleportPoints[10].transform.position;
+                rigidbody.velocity = Vector2.zero;
                 Invoke(nameof(CanTeleport), waitTime);
             }
             if (other.gameObject.name == "5" && teleport)
             {
                 teleport = false;
                 transform.position = teleportPoints[7].transform.position;
+                rigidbody.velocity = Vector2.zero;
                 Invoke(nameof(CanTeleport), waitTime);
             }
             if (other.gameObject.name == "7" && teleport)
             {
                 teleport = false;
                 transform.position = teleportPoints[13].transform.position;
+                rigidbody.velocity = Vector2.zero;
                 Invoke(nameof(CanTeleport), waitTime);
             }
             if (other.gameObject.name == "8" && teleport)
             {
                 teleport = false;
                 transform.position = teleportPoints[7].transform.position;
+                rigidbody.velocity = Vector2.zero;
                 Invoke(nameof(CanTeleport), waitTime);
             }
             if (other.gameObject.name == "10" && teleport)
             {
                 teleport = false;
                 transform.position = teleportPoints[14].transform.position;
+                rigidbody.velocity = Vector2.zero;
                 Invoke(nameof(CanTeleport), waitTime);
             }
             if (other.gameObject.name == "11" && teleport)
             {
                 teleport = false;
                 transform.position = teleportPoints[7].transform.position;
+                rigidbody.velocity = Vector2.zero;
                 Invoke(nameof(CanTeleport), waitTime);
             }
             if(other.gameObject.name == "14" && teleport)
             {
                 transform.position = teleportPoints[0].transform.position;
+                rigidbody.velocity = Vector2.zero;
             }
         }
 
@@ -96,7 +106,7 @@ public class Teleport : MonoBehaviour
 
     void CanTeleport()
     {
-        rigidbody.velocity = Vector2.zero;
+        
         teleport = true;
     }
 
