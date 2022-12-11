@@ -186,6 +186,11 @@ MonoBehaviour:
   - {fileID: 5261183744355168407, guid: 55bbefbb3f1da5b4f9fba999eb91f174, type: 3}
   - {fileID: 8557910715874180149, guid: 4edcdeb6ac9583e4c9b72075b1117a5d, type: 3}
   timeBetweenSpawns: 2
+--- !u!82 &182342290 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 460108289, guid: 11b6c4474f1678e4d9dc92499a5308ea, type: 3}
+  m_PrefabInstance: {fileID: 7042407720049129891}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &269926659
 GameObject:
   m_ObjectHideFlags: 0
@@ -2074,6 +2079,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7641814}
     - target: {fileID: 7042407720381053704, guid: 11b6c4474f1678e4d9dc92499a5308ea, type: 3}
+      propertyPath: winSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 28f28e3f8bd350b45b70e812293961f0, type: 3}
+    - target: {fileID: 7042407720381053704, guid: 11b6c4474f1678e4d9dc92499a5308ea, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 829544236}
@@ -2081,6 +2090,14 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7042407720381053704, guid: 11b6c4474f1678e4d9dc92499a5308ea, type: 3}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: d2fc8094bc07b1b4199af2382e831161, type: 3}
+    - target: {fileID: 7042407720381053704, guid: 11b6c4474f1678e4d9dc92499a5308ea, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 182342290}
     - target: {fileID: 7042407720381053704, guid: 11b6c4474f1678e4d9dc92499a5308ea, type: 3}
       propertyPath: deathScreen
       value: 
