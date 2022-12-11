@@ -9,6 +9,7 @@ TagManager:
   - Teleport
   - Pickable
   - Bullet
+  - Wall
   layers:
   - Default
   - TransparentFX

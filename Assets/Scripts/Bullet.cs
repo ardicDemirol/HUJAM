@@ -30,6 +30,8 @@ public class Bullet : MonoBehaviour
             Destroy(clone, 0.3f);
             Destroy(gameObject);
         }
+        if(collision.gameObject.tag == "Wall") { Destroy(gameObject); }
+        
        
     }
 
