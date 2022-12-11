@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 
 
 public class TextDeneme : MonoBehaviour
 {
     public float delay;
+    int nextSceneIndex;
 
-   
 
 
     [Multiline]
@@ -20,7 +21,7 @@ public class TextDeneme : MonoBehaviour
 
     private void Start()
     {
-       
+        nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
         thisText = GetComponent<TextMeshProUGUI>();
 
         StartCoroutine(TypeWrite());
@@ -41,8 +42,9 @@ public class TextDeneme : MonoBehaviour
             else
             {
                 yield return new WaitForSeconds(delay);
-            }
+            }  
         }
+        SceneManager.LoadScene(nextSceneIndex);
     }
 
 }

@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 86f604d5e9f4e5e439af65e41dc91387
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Panforte Serif
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 0634a88cdb444404a9c8aaf5e44b7150, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
