@@ -29,85 +29,76 @@ public class Teleport : MonoBehaviour
 
         if (other.tag == "Teleport")
         {
-            if (other.gameObject.name == "0" && teleport)
+            if (other.gameObject.name == "0")
             {
                 teleport = false;
                 transform.position = teleportPoints[4].transform.position;
-                rigidbody.velocity = Vector2.zero;
-                Invoke(nameof(CanTeleport), waitTime);
+                StartCoroutine(Wait());
             }
-            if (other.gameObject.name == "1" && teleport)
+            if (other.gameObject.name == "1")
             {
                 teleport = false;
                 transform.position = teleportPoints[10].transform.position;
-                rigidbody.velocity = Vector2.zero;
-                Invoke(nameof(CanTeleport), waitTime);
+                StartCoroutine(Wait());
             }
-            if (other.gameObject.name == "2" && teleport)
+            if (other.gameObject.name == "2")
             {
                 teleport = false;
                 transform.position = teleportPoints[0].transform.position;
-                rigidbody.velocity = Vector2.zero;
-                Invoke(nameof(CanTeleport), waitTime);
+                StartCoroutine(Wait());
             }
-          
-            if (other.gameObject.name == "4" && teleport)
+            if (other.gameObject.name == "4" )
             {
                 teleport = false;
                 transform.position = teleportPoints[10].transform.position;
-                rigidbody.velocity = Vector2.zero;
-                Invoke(nameof(CanTeleport), waitTime);
+                StartCoroutine(Wait());
             }
-            if (other.gameObject.name == "5" && teleport)
+            if (other.gameObject.name == "5")
             {
                 teleport = false;
                 transform.position = teleportPoints[7].transform.position;
-                rigidbody.velocity = Vector2.zero;
-                Invoke(nameof(CanTeleport), waitTime);
+                StartCoroutine(Wait());
             }
-            if (other.gameObject.name == "7" && teleport)
+            if (other.gameObject.name == "7" )
             {
                 teleport = false;
                 transform.position = teleportPoints[13].transform.position;
-                rigidbody.velocity = Vector2.zero;
-                Invoke(nameof(CanTeleport), waitTime);
+                StartCoroutine(Wait());
             }
-            if (other.gameObject.name == "8" && teleport)
+            if (other.gameObject.name == "8" )
             {
                 teleport = false;
                 transform.position = teleportPoints[7].transform.position;
-                rigidbody.velocity = Vector2.zero;
-                Invoke(nameof(CanTeleport), waitTime);
+                StartCoroutine(Wait());
             }
-            if (other.gameObject.name == "10" && teleport)
+            if (other.gameObject.name == "10" )
             {
                 teleport = false;
                 transform.position = teleportPoints[14].transform.position;
-                rigidbody.velocity = Vector2.zero;
-                Invoke(nameof(CanTeleport), waitTime);
+                StartCoroutine(Wait());
             }
-            if (other.gameObject.name == "11" && teleport)
+            if (other.gameObject.name == "11" )
             {
                 teleport = false;
                 transform.position = teleportPoints[7].transform.position;
-                rigidbody.velocity = Vector2.zero;
-                Invoke(nameof(CanTeleport), waitTime);
+                StartCoroutine(Wait());
             }
-            if(other.gameObject.name == "14" && teleport)
+            if(other.gameObject.name == "14" )
             {
                 transform.position = teleportPoints[0].transform.position;
-                rigidbody.velocity = Vector2.zero;
+                StartCoroutine(Wait());
             }
         }
 
     }
 
-
-
-    void CanTeleport()
+    IEnumerator Wait()
     {
-        
-        teleport = true;
+        while (true)
+        {
+            rigidbody.velocity = Vector2.zero;
+            yield return new WaitForSeconds(waitTime);
+        }
     }
 
 
