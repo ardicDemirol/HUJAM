@@ -34,63 +34,64 @@ public class Teleport : MonoBehaviour
 
         if (other.tag == "Teleport")
         {
-            audioSource.PlayOneShot(teleportSound);
+            
             if (other.gameObject.name == "0")
             {
-                teleport = false;
+                audioSource.PlayOneShot(teleportSound);
                 transform.position = teleportPoints[4].transform.position;
                 StartCoroutine(Wait());
             }
             if (other.gameObject.name == "1")
             {
-                teleport = false;
+                audioSource.PlayOneShot(teleportSound);
                 transform.position = teleportPoints[10].transform.position;
                 StartCoroutine(Wait());
             }
             if (other.gameObject.name == "2")
             {
-                teleport = false;
+                audioSource.PlayOneShot(teleportSound);
                 transform.position = teleportPoints[0].transform.position;
                 StartCoroutine(Wait());
             }
             if (other.gameObject.name == "4" )
             {
-                teleport = false;
+                audioSource.PlayOneShot(teleportSound);
                 transform.position = teleportPoints[10].transform.position;
                 StartCoroutine(Wait());
             }
             if (other.gameObject.name == "5")
             {
-                teleport = false;
+                audioSource.PlayOneShot(teleportSound);
                 transform.position = teleportPoints[7].transform.position;
                 StartCoroutine(Wait());
             }
             if (other.gameObject.name == "7" )
             {
-                teleport = false;
+                audioSource.PlayOneShot(teleportSound);
                 transform.position = teleportPoints[13].transform.position;
                 StartCoroutine(Wait());
             }
             if (other.gameObject.name == "8" )
             {
-                teleport = false;
+                audioSource.PlayOneShot(teleportSound);
                 transform.position = teleportPoints[7].transform.position;
                 StartCoroutine(Wait());
             }
             if (other.gameObject.name == "10" )
             {
-                teleport = false;
+                audioSource.PlayOneShot(teleportSound);
                 transform.position = teleportPoints[14].transform.position;
                 StartCoroutine(Wait());
             }
             if (other.gameObject.name == "11" )
             {
-                teleport = false;
+                audioSource.PlayOneShot(teleportSound);
                 transform.position = teleportPoints[7].transform.position;
                 StartCoroutine(Wait());
             }
             if(other.gameObject.name == "14" )
             {
+                audioSource.PlayOneShot(teleportSound);
                 transform.position = teleportPoints[0].transform.position;
                 StartCoroutine(Wait());
             }
@@ -102,7 +103,7 @@ public class Teleport : MonoBehaviour
     {
         while (true)
         {
-            rigidbody.velocity = Vector2.zero;
+            rigidbody.velocity = new Vector2(0f,0f);
             yield return new WaitForSeconds(waitTime);
         }
     }
