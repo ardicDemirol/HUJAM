@@ -32,6 +32,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip deathSound;
 
+    public bool canMove = true;
+
 
     private void Awake()
     {
@@ -48,36 +50,54 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * currentSpeed * Time.fixedDeltaTime);
+        if (canMove)
+        {
+            rb.MovePosition(rb.position + movement * currentSpeed * Time.fixedDeltaTime);
+        }
+
     }
 
     void Update()
     {
+
         Move();
         AnimatonChanger();
-        Debug.Log(rb.velocity);
     }
 
 
 
     void Move()
     {
+        if (canMove)
+        {
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
 
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+            rb.velocity = new Vector2(movement.x, movement.y).normalized;
 
-        rb.velocity = new Vector2(movement.x, movement.y).normalized;
+            FlipCharcter();
+        }
 
-        FlipCharcter();
+
+
     }
 
 
     void AnimatonChanger()
     {
+        if (canMove)
+        {
+            animator.SetFloat("Horizontal", movement.x);
+            animator.SetFloat("Vertical", movement.y);
+            animator.SetFloat("Speed", movement.sqrMagnitude);
+        }
+        else
+        {
+            Debug.Log("Ýdle durumuna geç");
+        }
 
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Vertical", movement.y);
-        animator.SetFloat("Speed", movement.sqrMagnitude);
+
+
 
     }
 
@@ -98,7 +118,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "")
         {
-            
+
 
         }
     }
@@ -115,6 +135,6 @@ public class PlayerController : MonoBehaviour
     }
 
 
-  
+
 
 }

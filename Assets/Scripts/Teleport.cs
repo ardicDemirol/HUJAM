@@ -7,26 +7,30 @@ public class Teleport : MonoBehaviour
 
 
     [SerializeField] Transform[] teleportPoints;
-    private float waitTime = 2f;
-    private bool teleport = true;
+    private float waitTime = 1f;
+    //private bool canMove = true;
+    
 
-    private Rigidbody2D rigidbody;
-
+    Rigidbody2D rigidbody;
+    PlayerController playerController;
+    Animator animator;
 
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip teleportSound;
 
     void Start()
     {
+        animator = GetComponent<Animator>();
+        playerController = GetComponent<PlayerController>();
         audioSource = GetComponent<AudioSource>();
         rigidbody = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-
+        waitTime += Time.deltaTime;
+        Debug.Log(rigidbody.velocity);
     }
-
 
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -34,79 +38,94 @@ public class Teleport : MonoBehaviour
 
         if (other.tag == "Teleport")
         {
-            
-            if (other.gameObject.name == "0")
+
+            if (other.gameObject.name == "0" && playerController.canMove == true)
             {
                 audioSource.PlayOneShot(teleportSound);
                 transform.position = teleportPoints[4].transform.position;
-                StartCoroutine(Wait());
+                Wait();
+                Invoke(nameof(Resume),1f);
+
             }
-            if (other.gameObject.name == "1")
+            if (other.gameObject.name == "1" && playerController.canMove == true)
             {
                 audioSource.PlayOneShot(teleportSound);
                 transform.position = teleportPoints[10].transform.position;
-                StartCoroutine(Wait());
+                Wait();
+                Invoke(nameof(Resume), 1f);
             }
-            if (other.gameObject.name == "2")
+            if (other.gameObject.name == "2" && playerController.canMove == true)
             {
                 audioSource.PlayOneShot(teleportSound);
                 transform.position = teleportPoints[0].transform.position;
-                StartCoroutine(Wait());
+                Wait();
+                Invoke(nameof(Resume), 1f);
             }
-            if (other.gameObject.name == "4" )
+            if (other.gameObject.name == "4" && playerController.canMove == true)
             {
                 audioSource.PlayOneShot(teleportSound);
                 transform.position = teleportPoints[10].transform.position;
-                StartCoroutine(Wait());
+                Wait();
+                Invoke(nameof(Resume), 1f);
             }
-            if (other.gameObject.name == "5")
+            if (other.gameObject.name == "5" && playerController.canMove == true)
             {
                 audioSource.PlayOneShot(teleportSound);
                 transform.position = teleportPoints[7].transform.position;
-                StartCoroutine(Wait());
+                Wait();
+                Invoke(nameof(Resume), 1f);
             }
-            if (other.gameObject.name == "7" )
+            if (other.gameObject.name == "7" && playerController.canMove == true)
             {
                 audioSource.PlayOneShot(teleportSound);
                 transform.position = teleportPoints[13].transform.position;
-                StartCoroutine(Wait());
+                Wait();
+                Invoke(nameof(Resume), 1f);
             }
-            if (other.gameObject.name == "8" )
+            if (other.gameObject.name == "8" && playerController.canMove == true)
             {
                 audioSource.PlayOneShot(teleportSound);
                 transform.position = teleportPoints[7].transform.position;
-                StartCoroutine(Wait());
+                Wait();
+                Invoke(nameof(Resume), 1f);
             }
-            if (other.gameObject.name == "10" )
+            if (other.gameObject.name == "10" && playerController.canMove == true)
             {
                 audioSource.PlayOneShot(teleportSound);
                 transform.position = teleportPoints[14].transform.position;
-                StartCoroutine(Wait());
+                Wait();
+                Invoke(nameof(Resume), 1f);
             }
-            if (other.gameObject.name == "11" )
+            if (other.gameObject.name == "11" && playerController.canMove == true)
             {
                 audioSource.PlayOneShot(teleportSound);
                 transform.position = teleportPoints[7].transform.position;
-                StartCoroutine(Wait());
+                Wait();
+                Invoke(nameof(Resume), 1f);
             }
-            if(other.gameObject.name == "14" )
+            if (other.gameObject.name == "14" && playerController.canMove == true)
             {
                 audioSource.PlayOneShot(teleportSound);
                 transform.position = teleportPoints[0].transform.position;
-                StartCoroutine(Wait());
+                Wait();
+                Invoke(nameof(Resume), 1f);
             }
         }
 
     }
-
-    IEnumerator Wait()
+    
+    void Wait()
     {
-        while (true)
-        {
-            rigidbody.velocity = new Vector2(0f,0f);
-            yield return new WaitForSeconds(waitTime);
-        }
+        playerController.canMove = false;
+        rigidbody.velocity = new Vector2(0f, 0f);
+        animator.SetFloat("Speed", 0);
     }
+
+    void Resume()
+    {
+        playerController.canMove = true;
+    }
+    
 
 
 }
