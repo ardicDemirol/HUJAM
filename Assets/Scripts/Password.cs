@@ -47,8 +47,6 @@ public class Password : MonoBehaviour
 
     public void CheckPassword()
     {
-
-
         string newPassword = passwordText.text.ToString();
 
         if (newPassword == password)
@@ -61,8 +59,10 @@ public class Password : MonoBehaviour
             ResetPassword();
             
         }
-
     }
-
+    public void ClosePanel()
+    {
+        passwordScreen.SetActive(false);
+    }
 
 }
