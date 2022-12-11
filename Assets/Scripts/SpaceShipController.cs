@@ -26,6 +26,11 @@ public class SpaceShipController : MonoBehaviour
     private FollowEnemy enemy;
     private LevelManager levelManager;
 
+
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip deathSound;
+    [SerializeField] AudioClip winSound;
+
     private void Awake()
     {
         spaceShipController = this;
@@ -33,6 +38,7 @@ public class SpaceShipController : MonoBehaviour
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         enemy = GetComponent<FollowEnemy>();
         levelManager = GetComponent<LevelManager>();
         currentHealth = maxHealth;
@@ -82,6 +88,7 @@ public class SpaceShipController : MonoBehaviour
         {
             Destroy(gameObject);
             deathScreen.SetActive(true);
+            audioSource.PlayOneShot(deathSound);
         }
     }
 
@@ -89,7 +96,9 @@ public class SpaceShipController : MonoBehaviour
     {
         if (healthBar.fillAmount >= 0.99f)
         {
+            audioSource.PlayOneShot(winSound);
             levelManager.NextLevel();
+            
         }
         
     }
