@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
     private Vector2 movement;
     private Animator animator;
 
+    [SerializeField] GameObject deathScreen;
+
     public int GetBullet
     {
         get { return currentBullet; }
@@ -51,21 +53,18 @@ public class PlayerController : MonoBehaviour
     {
         Move();
         AnimatonChanger();
-        
-
+        Debug.Log(rb.velocity);
     }
-
 
 
 
     void Move()
     {
-        //animator.SetBool("idle",true);
 
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        rb.velocity = new Vector2(movement.x, movement.y);
+        rb.velocity = new Vector2(movement.x, movement.y).normalized;
 
         FlipCharcter();
     }
@@ -93,12 +92,6 @@ public class PlayerController : MonoBehaviour
     }
 
 
-
-
-
-
-
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "")
@@ -110,9 +103,11 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Pickable")
+        if (collision.gameObject.tag == "Laser")
         {
-            Destroy(collision.gameObject);
+            // Ölme Efekti;
+            deathScreen.SetActive(true);
+            Destroy(gameObject);
         }
     }
 
