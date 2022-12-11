@@ -504,10 +504,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 0.1
-  startText: "creatinyden mahmuta...\ncreatinyden mahmuta...\n\nSistem ar\u0131zas\u0131
-    nedeniyle ge\xE7itlerin baz\u0131lar\u0131 do\u011Fru \xE7al\u0131\u015Fm\u0131yor.
-    \nOdalarda do\u011Fru ge\xE7itlerden ge\xE7erek \xE7\u0131k\u0131\u015Fa ula\u015Fmal\u0131s\u0131n.\nGe\xE7itlerin
-    \xFCzerindeki rakamlara dikkat et.\nZaman\u0131n\u0131 iyi kullanmay\u0131 unutma.\n"
+  startText: "Creatiny\u2019den Joe\u2019ya\u2026\r\nCreatiny\u2019den Joe\u2019ya\u2026\r\nSistem
+    ar\u0131zas\u0131 nedeniyle ge\xE7itlerin baz\u0131lar\u0131 do\u011Fru \xE7al\u0131\u015Fm\u0131yor.
+    \r\nOdalardaki  lazerlere \xE7arpmadan do\u011Fru ge\xE7itlere ula\u015Fmal\u0131s\u0131n.
+    Onlar seni \xE7\u0131k\u0131\u015F kap\u0131s\u0131na ula\u015Ft\u0131racak.\r\nGe\xE7itlerin
+    \xFCzerindeki rakamlara dikkat et.\r\nZaman\u0131n\u0131 iyi kullanmay\u0131
+    unutma.\r\n"
 --- !u!82 &1288305797
 AudioSource:
   m_ObjectHideFlags: 0
