@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpaceShipController : MonoBehaviour
 {
@@ -13,10 +14,18 @@ public class SpaceShipController : MonoBehaviour
     [SerializeField] int maxHealth = 100;
     private int currentHealth;
 
-      
+
+
+    [SerializeField] private GameObject deathScreen;
+    [SerializeField] private Image healthBar;
+
+    FollowEnemy enemy;
+
+
     private void Start()
     {
         currentHealth = maxHealth;
+        enemy = GetComponent<FollowEnemy>();
     }
 
     void Update()
@@ -46,14 +55,12 @@ public class SpaceShipController : MonoBehaviour
 
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if (other.gameObject.tag == "Enemy")
         {
-            currentHealth -= 10;
-            Destroy(collision.gameObject);
-
-            
+            currentHealth -= enemy.enemyHealth;
+            Debug.Log("Playere çarptý");
         }
     }
 }

@@ -41,8 +41,6 @@ public class EnemySpawner : MonoBehaviour
     {
         if (timer >= spawnTime)
         {
-            Debug.Log("ifin içindeyim");
-
             for (int i = 0; i < spawnPositions.Length; i++)
             {
 

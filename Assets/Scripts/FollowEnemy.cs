@@ -6,10 +6,11 @@ public class FollowEnemy : MonoBehaviour
 {
 
     private Transform playerPos;
-    [SerializeField] int enemyHealth = 1;
+    public int enemyHealth = 1;
 
     [SerializeField] GameObject explosionEffect;
     [SerializeField] GameObject explosionEffect2;
+
 
     void Awake()
     {
@@ -37,6 +38,7 @@ public class FollowEnemy : MonoBehaviour
         }
         if(collision.gameObject.tag == "Player")
         {
+            Destroy(gameObject);
             GameObject explosionEffectClone2 = Instantiate(explosionEffect2, transform.position, Quaternion.identity);
             Destroy(explosionEffectClone2, 0.2f);
 
