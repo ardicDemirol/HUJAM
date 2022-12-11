@@ -8202,6 +8202,11 @@ Transform:
   m_Father: {fileID: 422971101}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1708895006 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 368271921140613784, guid: 0f62daa2ef3fa8047952f7c2c63d5505, type: 3}
+  m_PrefabInstance: {fileID: 368271919527491583}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1709906111
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17556,8 +17561,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerImg: {fileID: 5533352722745682772}
   timerText: {fileID: 5533352723743944102}
-  deathScreen: {fileID: 0}
-  duration: 100
+  deathScreen: {fileID: 1708895006}
+  duration: 10
 --- !u!114 &5533352722975133376
 MonoBehaviour:
   m_ObjectHideFlags: 0

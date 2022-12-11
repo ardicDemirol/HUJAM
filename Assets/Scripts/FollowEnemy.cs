@@ -36,7 +36,7 @@ public class FollowEnemy : MonoBehaviour
             enemyHealth -= 1;
             if (enemyHealth < 0)
             {
-                Count();
+                SpaceShipController.spaceShipController.DoSmthng(Count());
                 Destroy(gameObject);
                 GameObject explosionEffectClone = Instantiate(explosionEffect, transform.position, Quaternion.identity);
                 Destroy(explosionEffectClone, 0.2f);

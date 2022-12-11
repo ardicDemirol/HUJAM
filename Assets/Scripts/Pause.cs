@@ -15,6 +15,16 @@ public class Pause : MonoBehaviour
     private void Start()
     {
         isPaused = false;
+        Time.timeScale = 1f;
+        PlayerPrefs.SetInt("Level1Info", 0);
+        if (PlayerPrefs.GetInt("Level1Info") == 0)
+        {
+            PlayerPrefs.SetInt("Level1Info", 1);
+        }
+        else
+        {
+
+        }
     }
 
     private void Update()

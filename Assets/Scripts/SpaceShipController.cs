@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class SpaceShipController : MonoBehaviour
 {
-
+    public static SpaceShipController spaceShipController; 
     [SerializeField] float moveSpeed = 5f;
     private Vector3 rotation;
     [SerializeField] float rotate = 10f;
@@ -26,6 +26,10 @@ public class SpaceShipController : MonoBehaviour
     private FollowEnemy enemy;
     private LevelManager levelManager;
 
+    private void Awake()
+    {
+        spaceShipController = this;
+    }
 
     private void Start()
     {
@@ -67,6 +71,7 @@ public class SpaceShipController : MonoBehaviour
         {
             damage = UnityEngine.Random.Range(1, 6);
             currentHealth -= damage;
+            healthBar.fillAmount -= damage/20;
         }
     }
 
@@ -92,10 +97,12 @@ public class SpaceShipController : MonoBehaviour
 
     void Bar()
     {
-        
         healthBar.fillAmount -= duration;
 
-       
+    }
 
+    public void DoSmthng(float a)
+    {
+        healthBar.fillAmount += a;
     }
 }
