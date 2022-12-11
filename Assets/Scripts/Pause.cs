@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Pause : MonoBehaviour
 {
-    public static bool isPaused = false;
+    public  bool isPaused = false;
     
 
-    [SerializeField] GameObject pauseMenu;
+    public GameObject pauseMenu;
     [SerializeField] GameObject timeHud;
+
+
+    int currentSceneIndex;
 
     private void Start()
     {
-        
+        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
     private void Update()
@@ -33,9 +37,14 @@ public class Pause : MonoBehaviour
 
     public void ResumeGame()
     {
+        if (currentSceneIndex)
+        {
+
+        }
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
+        
     }
 
 

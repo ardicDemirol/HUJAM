@@ -13,31 +13,26 @@ public class SpaceShipController : MonoBehaviour
 
     [SerializeField] int maxHealth = 100;
     private int currentHealth;
+    private int damage;
 
 
 
     [SerializeField] private GameObject deathScreen;
     [SerializeField] private Image healthBar;
 
-    FollowEnemy enemy;
 
 
     private void Start()
     {
         currentHealth = maxHealth;
-        enemy = GetComponent<FollowEnemy>();
     }
 
     void Update()
     {
-       Turn();
+        Turn();
+        Die();
     }
 
-    private void FixedUpdate()
-    {
-
-        
-    }
 
     void Turn()
     {
@@ -59,8 +54,20 @@ public class SpaceShipController : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
-            currentHealth -= enemy.enemyHealth;
-            Debug.Log("Playere çarptý");
+            damage = UnityEngine.Random.Range(1, 6);
+            currentHealth -= damage;
+            Debug.Log(currentHealth);
+        }
+    }
+
+
+    void Die()
+    {
+        if (currentHealth < 0)
+        {
+            Destroy(gameObject);
+            deathScreen.SetActive(true);
+            
         }
     }
 }

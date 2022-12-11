@@ -6,7 +6,7 @@ public class FollowEnemy : MonoBehaviour
 {
 
     private Transform playerPos;
-    public int enemyHealth = 1;
+    [SerializeField] int enemyHealth = 1;
 
     [SerializeField] GameObject explosionEffect;
     [SerializeField] GameObject explosionEffect2;
@@ -15,6 +15,10 @@ public class FollowEnemy : MonoBehaviour
     void Awake()
     {
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
+    }
+    private void Start()
+    {
+        int health = enemyHealth;
     }
 
     void Update()

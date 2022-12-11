@@ -41,7 +41,11 @@ public class LevelManager : MonoBehaviour
     }
     public void RestartLevel()
     {
+        pause.ResumeGame();
+        pause.pauseMenu.SetActive(false);
         SceneManager.LoadScene(currentSceneIndex);
+        
+
     }
 
 

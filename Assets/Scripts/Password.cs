@@ -28,7 +28,6 @@ public class Password : MonoBehaviour
         {
             passwordScreen.SetActive(true);
             Debug.Log("carpti");
-            pause.PauseGame();
         }
     }
 
