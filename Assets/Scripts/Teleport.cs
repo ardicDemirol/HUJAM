@@ -7,13 +7,18 @@ public class Teleport : MonoBehaviour
 
 
     [SerializeField] Transform[] teleportPoints;
-    private float waitTime = 1f;
+    private float waitTime = 2f;
     private bool teleport = true;
 
     private Rigidbody2D rigidbody;
 
+
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip teleportSound;
+
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         rigidbody = GetComponent<Rigidbody2D>();
     }
 
@@ -29,6 +34,7 @@ public class Teleport : MonoBehaviour
 
         if (other.tag == "Teleport")
         {
+            audioSource.PlayOneShot(teleportSound);
             if (other.gameObject.name == "0")
             {
                 teleport = false;
