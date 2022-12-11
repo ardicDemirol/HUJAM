@@ -100,6 +100,7 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+<<<<<<< Updated upstream:Assets/eda/decor/Decal vent 05 yellow diffuse.tga.meta
   - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 512
@@ -124,6 +125,8 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+=======
+>>>>>>> Stashed changes:Assets/Sprites/SciFi decals pack/Decal vent 05/Decal vent 05 yellow diffuse.tga.meta
   spriteSheet:
     serializedVersion: 2
     sprites: []
