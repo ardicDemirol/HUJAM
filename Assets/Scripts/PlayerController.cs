@@ -34,8 +34,10 @@ public class PlayerController : MonoBehaviour
 
     public bool canMove = true;
 
+    Password password;
 
-    private void Awake()
+
+     void Awake()
     {
         currentSpeed = runSpeed;
         rb = GetComponent<Rigidbody2D>();
@@ -45,12 +47,13 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        password = GetComponent<Password>();
         audioSource = GetComponent<AudioSource>();
     }
 
     private void FixedUpdate()
     {
-        if (canMove)
+        if (canMove )
         {
             rb.MovePosition(rb.position + movement * currentSpeed * Time.fixedDeltaTime);
         }
@@ -132,6 +135,7 @@ public class PlayerController : MonoBehaviour
             Destroy(gameObject);
             audioSource.PlayOneShot(deathSound);
         }
+       
     }
 
 

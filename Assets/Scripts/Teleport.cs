@@ -114,14 +114,14 @@ public class Teleport : MonoBehaviour
 
     }
     
-    void Wait()
+    public void Wait()
     {
         playerController.canMove = false;
         rigidbody.velocity = new Vector2(0f, 0f);
         animator.SetFloat("Speed", 0);
     }
 
-    void Resume()
+    public void Resume()
     {
         playerController.canMove = true;
     }
