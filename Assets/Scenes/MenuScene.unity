@@ -638,8 +638,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -4}
+  m_SizeDelta: {x: 0, y: -23.279}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1070364262
 MonoBehaviour:
@@ -661,7 +661,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\xC7IK"
+  m_text: CIK
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cc06ab3abe8cffa4ab72f5dc5cc6a0ed, type: 2}
   m_sharedMaterial: {fileID: 4474152855584006882, guid: cc06ab3abe8cffa4ab72f5dc5cc6a0ed, type: 2}
@@ -773,7 +773,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -2.0087}
+  m_AnchoredPosition: {x: 0, y: -2.0086994}
   m_SizeDelta: {x: 0, y: -9.2346}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1337478979
