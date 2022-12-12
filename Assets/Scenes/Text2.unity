@@ -487,7 +487,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -692, y: 0}
+  m_AnchoredPosition: {x: -724, y: 0}
   m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1378355636
@@ -661,8 +661,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 0.075
   panel: {fileID: 0}
-  gameplayAudio: {fileID: 0}
-  audioSource: {fileID: 0}
   startText: "Tebrikler Joe. Savunma alan\u0131na ula\u015Ft\u0131n.\r\n\u015Eimdi
     arac\u0131n g\xFCvenli\u011Fini sa\u011Flamak i\xE7in araca yakla\u015Fan nesneleri
     yok etmelisin.\r\nArac\u0131n g\xFCvenlik durumu %100 oldu\u011Funda kurtulacaks\u0131n.\r\n\u0130yi
