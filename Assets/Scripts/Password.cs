@@ -29,6 +29,7 @@ public class Password : MonoBehaviour
         {
             openPanel = true;
             passwordScreen.SetActive(true);
+            Time.timeScale = 0f;
             Debug.Log("carpti");
         }
 
@@ -52,7 +53,8 @@ public class Password : MonoBehaviour
         if (newPassword == password)
         {
             SceneManager.LoadScene(nextSceneIndex);
-            
+            Time.timeScale = 1f;
+
         }
         else
         {
@@ -62,6 +64,7 @@ public class Password : MonoBehaviour
     }
     public void ClosePanel()
     {
+        Time.timeScale = 1f;
         passwordScreen.SetActive(false);
     }
 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public GameObject hitEffect;
-    
+    private SpaceShipController spaceShift;
 
     //private void OnCollisionEnter2D(Collision2D collision)
     //{
@@ -21,6 +21,11 @@ public class Bullet : MonoBehaviour
     //        Destroy(gameObject);
     //    }
     //}
+
+    private void Start()
+    {
+        spaceShift = GetComponent<SpaceShipController>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

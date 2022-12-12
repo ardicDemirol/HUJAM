@@ -1,21 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class Pause : MonoBehaviour
+public class Pause2 : MonoBehaviour
 {
-    public  bool isPaused = false;
+
+    public bool isPaused = false;
 
     public GameObject pauseMenu;
-    [SerializeField] GameObject timeHud;
+
+    Shoot shoot;
 
 
     private void Start()
     {
+        shoot = GetComponent<Shoot>();
         isPaused = false;
         Time.timeScale = 1f;
-
     }
 
     private void Update()
@@ -36,20 +37,26 @@ public class Pause : MonoBehaviour
 
     public void ResumeGame()
     {
+        shoot.canShoot = true;
         isPaused = false;
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
+        Debug.Log("resume");
 
     }
 
 
     public void PauseGame()
     {
+        shoot.canShoot = false;
         isPaused = true;
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
-       
+        Debug.Log("pause");
+
     }
+
+
 
 
 }

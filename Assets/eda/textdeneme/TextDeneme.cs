@@ -27,6 +27,7 @@ public class TextDeneme : MonoBehaviour
         thisText = GetComponent<TextMeshProUGUI>();
 
         StartCoroutine(TypeWrite());
+        Time.timeScale = 1;
 
     }
 

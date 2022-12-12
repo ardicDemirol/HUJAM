@@ -16,10 +16,11 @@ public class SpaceShipController : MonoBehaviour
     private float currentHealth;
     private float damage;
 
-
+    public bool canMove = true;
 
     [SerializeField] private GameObject deathScreen;
     [SerializeField] private Image healthBar;
+    [SerializeField] private GameObject health;
 
     private float duration;
     private float enemyCount;
@@ -51,7 +52,7 @@ public class SpaceShipController : MonoBehaviour
 
     void Update()
     {
-        duration = Time.deltaTime / 75;
+        duration = Time.deltaTime / 50;
 
         Turn();
         Die();
@@ -62,16 +63,20 @@ public class SpaceShipController : MonoBehaviour
 
     void Turn()
     {
-        if (Input.GetKey(KeyCode.D))
+        if (canMove)
         {
-            rotation = new Vector3(0, 0, -rotate);
-            transform.Rotate(rotation * Time.deltaTime * moveSpeed);
+            if (Input.GetKey(KeyCode.D))
+            {
+                rotation = new Vector3(0, 0, -rotate);
+                transform.Rotate(rotation * Time.deltaTime * moveSpeed);
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                rotation = new Vector3(0, 0, rotate);
+                transform.Rotate(rotation * Time.deltaTime * moveSpeed);
+            }
         }
-        if (Input.GetKey(KeyCode.A))
-        {
-            rotation = new Vector3(0, 0, rotate);
-            transform.Rotate(rotation * Time.deltaTime * moveSpeed);
-        }
+       
     }
 
 
@@ -80,26 +85,27 @@ public class SpaceShipController : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
-            damage = UnityEngine.Random.Range(1, 6);
+            damage = UnityEngine.Random.Range(1,8);
             currentHealth -= damage; 
-            healthBar.fillAmount -= damage/20;
+            healthBar.fillAmount -= damage/75;
         }
     }
 
 
     void Die()
     {
-        if (currentHealth < 0 || healthBar.fillAmount <= 0.02f)
+        if (healthBar.fillAmount <= 0.02f)
         {
             Destroy(gameObject);
             deathScreen.SetActive(true);
+            health.SetActive(false);
             audioSource.PlayOneShot(deathSound);
         }
     }
 
     void Win()
     {
-        if (healthBar.fillAmount >= 0.97f)
+        if (healthBar.fillAmount >= 0.99f)
         {
             audioSource.PlayOneShot(winSound);
             int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;

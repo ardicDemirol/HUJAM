@@ -12,6 +12,10 @@ public class Shoot : MonoBehaviour
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip fireSound;
 
+    public bool canShoot = true;
+
+
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -20,12 +24,13 @@ public class Shoot : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && canShoot == true)
         {
             ShootBullet();
             audioSource.PlayOneShot(fireSound);
-            
+
         }
+
     }
 
 
@@ -37,12 +42,11 @@ public class Shoot : MonoBehaviour
             GameObject bullet = Instantiate(bulletPrefab, firePoints[j].position, firePoints[j].rotation);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
             rb.AddForce(firePoints[j].up * bulletForce, ForceMode2D.Impulse);
-
         }
-        
+
     }
 
-   
+
 
 
 
