@@ -1050,7 +1050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e224d8e5a6e09c4e9eb33ae9f46a67a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0.1
+  delay: 0.075
   panel: {fileID: 800582633}
   gameplayAudio: {fileID: 0}
   audioSource: {fileID: 0}
