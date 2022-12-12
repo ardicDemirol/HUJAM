@@ -13,11 +13,14 @@ public class Password : MonoBehaviour
     public TextMeshProUGUI passwordText;
     string password = "2514";
 
+    public bool openPanel = false;
     private int nextSceneIndex;
     Pause pause;
 
+
     private void Start()
     {
+
         nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
         pause = GetComponent<Pause>();
     }
@@ -26,9 +29,11 @@ public class Password : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            openPanel = true;
             passwordScreen.SetActive(true);
             Debug.Log("carpti");
         }
+
     }
 
     public void KeyButton(string key)
