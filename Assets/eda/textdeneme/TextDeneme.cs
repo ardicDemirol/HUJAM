@@ -11,7 +11,7 @@ public class TextDeneme : MonoBehaviour
 {
     public float delay;
     int nextSceneIndex;
-
+    [SerializeField] GameObject panel;
 
 
     [Multiline]
@@ -42,9 +42,11 @@ public class TextDeneme : MonoBehaviour
             else
             {
                 yield return new WaitForSeconds(delay);
-            }  
+            }
         }
         SceneManager.LoadScene(nextSceneIndex);
+        panel.SetActive(true);
+
     }
 
 }

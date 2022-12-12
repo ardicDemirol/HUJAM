@@ -660,9 +660,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 0.1
-  startText: "Tebrikler. Savunma alan\u0131na ula\u015Ft\u0131n.\r\n\u015Eimdi arac\u0131n
-    g\xFCvenli\u011Fini sa\u011Flamak i\xE7in araca yakla\u015Fan nesneleri yok etmelisin.\r\nArac\u0131n
-    g\xFCvenlik durumu %100 oldu\u011Funda kurtulacaks\u0131n.\r\n\u0130yi \u015Eanslar...\r\n"
+  startText: "Tebrikler Joe. Savunma alan\u0131na ula\u015Ft\u0131n.\r\n\u015Eimdi
+    arac\u0131n g\xFCvenli\u011Fini sa\u011Flamak i\xE7in araca yakla\u015Fan nesneleri
+    yok etmelisin.\r\nArac\u0131n g\xFCvenlik durumu %100 oldu\u011Funda kurtulacaks\u0131n.\r\n\u0130yi
+    \u015Eanslar...\r\n"
 --- !u!82 &2130689313
 AudioSource:
   m_ObjectHideFlags: 0
