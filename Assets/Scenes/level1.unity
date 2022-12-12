@@ -16849,6 +16849,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 143022012792154715, guid: cf7dbeab5f9916e43bf80cbbf569619b, type: 3}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 516aff69c1570c74986ef6fdcb55ff3d, type: 3}
+    - target: {fileID: 143022012792154715, guid: cf7dbeab5f9916e43bf80cbbf569619b, type: 3}
       propertyPath: deathScreen
       value: 
       objectReference: {fileID: 1708895006}
@@ -19801,7 +19805,7 @@ MonoBehaviour:
   timerImg: {fileID: 5533352722745682772}
   timerText: {fileID: 5533352723743944102}
   deathScreen: {fileID: 1708895006}
-  duration: 100
+  duration: 90
 --- !u!114 &5533352722975133376
 MonoBehaviour:
   m_ObjectHideFlags: 0
