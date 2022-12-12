@@ -31,6 +31,7 @@ public class SpaceShipController : MonoBehaviour
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip deathSound;
     [SerializeField] AudioClip winSound;
+    [SerializeField] AudioClip gameplayAudio;
 
     private void Awake()
     {
@@ -39,11 +40,13 @@ public class SpaceShipController : MonoBehaviour
 
     private void Start()
     {
+        
         audioSource = GetComponent<AudioSource>();
         enemy = GetComponent<FollowEnemy>();
         levelManager = GetComponent<LevelManager>();
         currentHealth = maxHealth;
-        
+        StartCoroutine(LoopAudio());
+
     }
 
     void Update()
@@ -101,7 +104,7 @@ public class SpaceShipController : MonoBehaviour
             audioSource.PlayOneShot(winSound);
             int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
             SceneManager.LoadScene(nextSceneIndex);
-            Debug.Log("Sahne yüklenmedi");
+            Debug.Log("Sahne yÃ¼klenmedi");
 
         }
 
@@ -117,5 +120,16 @@ public class SpaceShipController : MonoBehaviour
     public void DoSmthng(float a)
     {
         healthBar.fillAmount += a;
+    }
+
+    IEnumerator LoopAudio()
+    {
+        float length = gameplayAudio.length;
+
+        while (true)
+        {
+            audioSource.PlayOneShot(gameplayAudio);
+            yield return new WaitForSeconds(length);
+        }
     }
 }

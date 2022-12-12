@@ -12,6 +12,8 @@ public class TextDeneme : MonoBehaviour
     public float delay;
     int nextSceneIndex;
     [SerializeField] GameObject panel;
+    [SerializeField] AudioClip gameplayAudio;
+    [SerializeField] AudioSource audioSource;
 
 
     [Multiline]
@@ -46,7 +48,6 @@ public class TextDeneme : MonoBehaviour
         }
         SceneManager.LoadScene(nextSceneIndex);
         panel.SetActive(true);
-
     }
 
 }

@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip deathSound;
+    [SerializeField] AudioClip gameplayAudio;
 
     public bool canMove = true;
 
@@ -47,6 +48,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        StartCoroutine(LoopAudio());
         password = GetComponent<Password>();
         audioSource = GetComponent<AudioSource>();
     }
@@ -131,11 +133,23 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Laser")
         {
             // Ölme Efekti;
-            deathScreen.SetActive(true);
-            Destroy(gameObject);
             audioSource.PlayOneShot(deathSound);
+            deathScreen.SetActive(true);
+            //Destroy(gameObject);
+            
         }
        
+    }
+
+    IEnumerator LoopAudio()
+    {
+        float length = gameplayAudio.length;
+
+        while (true)
+        {
+            audioSource.PlayOneShot(gameplayAudio);
+            yield return new WaitForSeconds(length);
+        }
     }
 
 

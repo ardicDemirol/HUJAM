@@ -15,14 +15,12 @@ public class Password : MonoBehaviour
 
     public bool openPanel = false;
     private int nextSceneIndex;
-    Pause pause;
 
 
     private void Start()
     {
 
         nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
-        pause = GetComponent<Pause>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)

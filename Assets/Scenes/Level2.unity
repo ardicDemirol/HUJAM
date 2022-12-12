@@ -2086,6 +2086,10 @@ PrefabInstance:
       propertyPath: deathScreen
       value: 
       objectReference: {fileID: 1876932382}
+    - target: {fileID: 7042407720381053704, guid: 11b6c4474f1678e4d9dc92499a5308ea, type: 3}
+      propertyPath: gameplayAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 6aaaaf2a595121c499724eddcd232a2d, type: 3}
     - target: {fileID: 7042407720381053705, guid: 11b6c4474f1678e4d9dc92499a5308ea, type: 3}
       propertyPath: m_RootOrder
       value: 2

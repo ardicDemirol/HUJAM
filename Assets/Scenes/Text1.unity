@@ -504,6 +504,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 0.1
+  panel: {fileID: 0}
+  gameplayAudio: {fileID: 0}
+  audioSource: {fileID: 0}
   startText: "Creatiny\u2019den Joe\u2019ya\u2026\r\nCreatiny\u2019den Joe\u2019ya\u2026\r\nSistem
     ar\u0131zas\u0131 nedeniyle ge\xE7itlerin baz\u0131lar\u0131 do\u011Fru \xE7al\u0131\u015Fm\u0131yor.
     \r\nOdalardaki  lazerlere \xE7arpmadan do\u011Fru ge\xE7itlere ula\u015Fmal\u0131s\u0131n.
@@ -520,11 +523,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e7794313ecf27144591956f0c03601dc, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0eab523c752479346b2b46f4b7d970f6, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

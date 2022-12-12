@@ -660,6 +660,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 0.1
+  panel: {fileID: 0}
+  gameplayAudio: {fileID: 0}
+  audioSource: {fileID: 0}
   startText: "Tebrikler Joe. Savunma alan\u0131na ula\u015Ft\u0131n.\r\n\u015Eimdi
     arac\u0131n g\xFCvenli\u011Fini sa\u011Flamak i\xE7in araca yakla\u015Fan nesneleri
     yok etmelisin.\r\nArac\u0131n g\xFCvenlik durumu %100 oldu\u011Funda kurtulacaks\u0131n.\r\n\u0130yi
@@ -674,7 +677,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e7794313ecf27144591956f0c03601dc, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0eab523c752479346b2b46f4b7d970f6, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

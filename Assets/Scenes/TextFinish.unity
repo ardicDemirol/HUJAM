@@ -1052,6 +1052,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 0.1
   panel: {fileID: 800582633}
+  gameplayAudio: {fileID: 0}
+  audioSource: {fileID: 0}
   startText: "Tebrikler Joe. Sana olan g\xFCvenimizi bo\u015Fa \xE7\u0131karmad\u0131n
     ve gezegenimize ba\u015Far\u0131yla ula\u015Ft\u0131n. "
 --- !u!82 &1918403568
@@ -1064,7 +1066,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e7794313ecf27144591956f0c03601dc, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0eab523c752479346b2b46f4b7d970f6, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
