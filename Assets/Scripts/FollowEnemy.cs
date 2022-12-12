@@ -24,7 +24,7 @@ public class FollowEnemy : MonoBehaviour
 
     void Update()
     {
-        float speed = UnityEngine.Random.Range(0.005f, 2f);
+        float speed = UnityEngine.Random.Range(0.005f, 3f);
         transform.position = Vector2.MoveTowards(transform.position, playerPos.position, speed * Time.deltaTime);
     }
 

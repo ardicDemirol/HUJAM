@@ -35,8 +35,6 @@ public class Password : MonoBehaviour
     {
         passwordText.text += key;
         Debug.Log(passwordText.text);
-
-
     }
 
     public void ResetPassword()

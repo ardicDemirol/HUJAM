@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SpaceShipController : MonoBehaviour
 {
@@ -42,11 +43,12 @@ public class SpaceShipController : MonoBehaviour
         enemy = GetComponent<FollowEnemy>();
         levelManager = GetComponent<LevelManager>();
         currentHealth = maxHealth;
+        
     }
 
     void Update()
     {
-        duration = Time.deltaTime / 50;
+        duration = Time.deltaTime / 75;
 
         Turn();
         Die();
@@ -94,13 +96,15 @@ public class SpaceShipController : MonoBehaviour
 
     void Win()
     {
-        if (healthBar.fillAmount >= 0.99f)
+        if (healthBar.fillAmount >= 0.97f)
         {
             audioSource.PlayOneShot(winSound);
-            levelManager.NextLevel();
-            
+            int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+            SceneManager.LoadScene(nextSceneIndex);
+            Debug.Log("Sahne yüklenmedi");
+
         }
-        
+
     }
 
 
