@@ -34,6 +34,9 @@ public class SpaceShipController : MonoBehaviour
     [SerializeField] AudioClip winSound;
     [SerializeField] AudioClip gameplayAudio;
 
+    public Joystick joystick;
+    Vector2 movement;
+
     private void Awake()
     {
         spaceShipController = this;
@@ -65,18 +68,31 @@ public class SpaceShipController : MonoBehaviour
     {
         if (canMove)
         {
-            if (Input.GetKey(KeyCode.D))
+            //if (Input.GetKey(KeyCode.D))
+            //{
+            //    rotation = new Vector3(0, 0, -rotate);
+            //    transform.Rotate(rotation * Time.deltaTime * moveSpeed);
+            //}
+            //if (Input.GetKey(KeyCode.A))
+            //{
+            //    rotation = new Vector3(0, 0, rotate);
+            //    transform.Rotate(rotation * Time.deltaTime * moveSpeed);
+            //}
+
+            movement.y = joystick.Vertical;
+            movement.x = joystick.Horizontal;
+
+            if(joystick.Horizontal >= 0.2f)
             {
                 rotation = new Vector3(0, 0, -rotate);
                 transform.Rotate(rotation * Time.deltaTime * moveSpeed);
             }
-            if (Input.GetKey(KeyCode.A))
+            if (joystick.Horizontal <= -0.2f)
             {
                 rotation = new Vector3(0, 0, rotate);
                 transform.Rotate(rotation * Time.deltaTime * moveSpeed);
             }
         }
-       
     }
 
 

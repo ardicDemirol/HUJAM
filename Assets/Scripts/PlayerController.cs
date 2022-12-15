@@ -7,12 +7,8 @@ public class PlayerController : MonoBehaviour
 {
 
     [SerializeField] Rigidbody2D rb;
-    float currentSpeed = 1f;
-    [SerializeField] private float walkSpeed = 10f;
-    [SerializeField] private float runSpeed = 20f;
-    [SerializeField] float jumpPower = 100f;
+    [SerializeField] float runSpeed = 1f;
 
-    private int bullet = 10;
 
     private int currentBullet = 100;
 
@@ -33,14 +29,16 @@ public class PlayerController : MonoBehaviour
     [SerializeField] AudioClip deathSound;
     [SerializeField] AudioClip gameplayAudio;
 
+
     public bool canMove = true;
 
-    Password password;
+
+    public Joystick joystick;
 
 
-     void Awake()
+
+    void Awake()
     {
-        currentSpeed = runSpeed;
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
@@ -49,22 +47,20 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         StartCoroutine(LoopAudio());
-        password = GetComponent<Password>();
         audioSource = GetComponent<AudioSource>();
     }
 
     private void FixedUpdate()
     {
-        if (canMove )
+        if (canMove)
         {
-            rb.MovePosition(rb.position + movement * currentSpeed * Time.fixedDeltaTime);
+            rb.MovePosition(rb.position + movement * runSpeed * Time.fixedDeltaTime);
         }
 
     }
 
     void Update()
     {
-
         Move();
         AnimatonChanger();
     }
@@ -75,35 +71,65 @@ public class PlayerController : MonoBehaviour
     {
         if (canMove)
         {
-            movement.x = Input.GetAxisRaw("Horizontal");
-            movement.y = Input.GetAxisRaw("Vertical");
+            // PC INPUT //
+            //movement.x = Input.GetAxisRaw("Horizontal");
+            //movement.y = Input.GetAxisRaw("Vertical");
 
+            // MOBIL INPUT //
+
+            //movement.x = joystick.Horizontal;
+            //movement.y = joystick.Vertical;
+
+            if (joystick.Horizontal >= 0.75f)
+            {
+                movement.x = runSpeed;
+                movement.y = 0.2f;
+                Debug.Log("x >= .2f");
+            }
+            else if (joystick.Horizontal <= -0.75f)
+            {
+                movement.x = -runSpeed;
+                movement.y = 0.2f;
+                Debug.Log("x <= .2f");
+            }
+            else if (joystick.Vertical >= 0.5f)
+            {
+                movement.y = runSpeed;
+                movement.x = 0.2f;
+                Debug.Log("y >= .5f");
+            }
+            else if (joystick.Vertical <= -0.5f)
+            {
+                movement.y = -runSpeed;
+                movement.x = 0.2f;
+                Debug.Log("y <= .5f");
+            }
+            else
+            {
+                movement.x = 0;
+                movement.y = 0;
+            }
+           
             rb.velocity = new Vector2(movement.x, movement.y).normalized;
 
             FlipCharcter();
         }
-
-
-
     }
+
 
 
     void AnimatonChanger()
     {
         if (canMove)
         {
-            animator.SetFloat("Horizontal", movement.x);
-            animator.SetFloat("Vertical", movement.y);
+            animator.SetFloat("Horizontal", joystick.Horizontal);
+            animator.SetFloat("Vertical", joystick.Vertical);
             animator.SetFloat("Speed", movement.sqrMagnitude);
         }
         else
         {
             Debug.Log("Ýdle durumuna geç");
         }
-
-
-
-
     }
 
     private void FlipCharcter()
@@ -119,26 +145,15 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "")
-        {
-
-
-        }
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Laser")
         {
-            // Ölme Efekti;
             audioSource.PlayOneShot(deathSound);
             deathScreen.SetActive(true);
-            //Destroy(gameObject);
             
         }
-       
+
     }
 
     IEnumerator LoopAudio()
@@ -151,8 +166,5 @@ public class PlayerController : MonoBehaviour
             yield return new WaitForSeconds(length);
         }
     }
-
-
-
 
 }

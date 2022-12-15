@@ -68,8 +68,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Ana Menu
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 21b7617507a1dc241b37062a57c52d1a, type: 2}
-  m_sharedMaterial: {fileID: 514766568346210824, guid: 21b7617507a1dc241b37062a57c52d1a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: cc06ab3abe8cffa4ab72f5dc5cc6a0ed, type: 2}
+  m_sharedMaterial: {fileID: 4474152855584006882, guid: cc06ab3abe8cffa4ab72f5dc5cc6a0ed, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -93,8 +93,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 45
+  m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -172,8 +172,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -39.9}
-  m_SizeDelta: {x: 220, y: 45}
+  m_AnchoredPosition: {x: -0.000022411, y: -91}
+  m_SizeDelta: {x: 314.1372, y: 92.4478}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2245815718546401508
 CanvasRenderer:
@@ -196,15 +196,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.32941177, g: 0.53333336, b: 0.7294118, a: 1}
+  m_Color: {r: 0, g: 0.94509804, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 6acfc727711c08747aad4182b60e4664, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -384,8 +384,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 20}
-  m_SizeDelta: {x: 220, y: 45}
+  m_AnchoredPosition: {x: -0.000022411, y: 46.224}
+  m_SizeDelta: {x: 314.1372, y: 92.4478}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6044067658968973160
 CanvasRenderer:
@@ -408,15 +408,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3266583, g: 0.5329508, b: 0.7264151, a: 1}
+  m_Color: {r: 0, g: 0.94509804, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 6acfc727711c08747aad4182b60e4664, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -549,8 +549,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Tekrar Oyna
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 21b7617507a1dc241b37062a57c52d1a, type: 2}
-  m_sharedMaterial: {fileID: 514766568346210824, guid: 21b7617507a1dc241b37062a57c52d1a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: cc06ab3abe8cffa4ab72f5dc5cc6a0ed, type: 2}
+  m_sharedMaterial: {fileID: 4474152855584006882, guid: cc06ab3abe8cffa4ab72f5dc5cc6a0ed, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -574,8 +574,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 45
+  m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

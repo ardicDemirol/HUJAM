@@ -29,14 +29,17 @@ public class TextDeneme : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        ShowAllText();
+    }
+
     IEnumerator TypeWrite()
     {
-        foreach(char i in startText)
+        foreach (char i in startText)
         {
             thisText.text += i.ToString();
-          
-
-            if(i.ToString()== ".")
+            if (i.ToString() == ".")
             {
                 yield return new WaitForSeconds(1);
             }
@@ -48,5 +51,17 @@ public class TextDeneme : MonoBehaviour
         SceneManager.LoadScene(nextSceneIndex);
         panel.SetActive(true);
     }
+
+    public void ShowAllText()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            thisText.text = startText;
+            StopAllCoroutines();
+            panel.SetActive(true);
+        }
+    }
+
+
 
 }

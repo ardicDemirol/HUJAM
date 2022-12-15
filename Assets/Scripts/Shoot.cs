@@ -24,15 +24,23 @@ public class Shoot : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && canShoot == true)
-        {
-            ShootBullet();
-            audioSource.PlayOneShot(fireSound);
-
-        }
 
     }
 
+    public void Click()
+    {
+        //if (Input.GetMouseButtonDown(0) && canShoot == true)
+        //{
+        //    ShootBullet();
+        //    audioSource.PlayOneShot(fireSound);
+        //}
+
+        if (canShoot == true)
+        {
+            ShootBullet();
+            audioSource.PlayOneShot(fireSound);
+        }
+    }
 
     void ShootBullet()
     {
