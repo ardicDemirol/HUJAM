@@ -6,9 +6,6 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
 
-    //[SerializeField] float speed;
-    //[SerializeField] float walkSpeed;
-    //[SerializeField] float runSpeed;
 
     [SerializeField] Transform[] spawnPositions;
     [SerializeField] GameObject[] enemyPrefab = new GameObject[4];

@@ -5,26 +5,11 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public GameObject hitEffect;
-    private SpaceShipController spaceShift;
 
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.tag == "Enemy")
-    //    {
-    //        GameObject clone = Instantiate(hitEffect, transform.position, Quaternion.identity);
-    //        Destroy(clone,0.3f);
-    //        Destroy(gameObject);
-    //        Debug.Log("Enemy");
-    //    }
-    //    else
-    //    {
-    //        Destroy(gameObject);
-    //    }
-    //}
+
 
     private void Start()
     {
-        spaceShift = GetComponent<SpaceShipController>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

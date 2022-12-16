@@ -55,7 +55,7 @@ public class FollowEnemy : MonoBehaviour
 
     public float Count()
     {
-        count /= 100;
+        count /= 75;
         return count;
     }
    

@@ -55,7 +55,7 @@ public class SpaceShipController : MonoBehaviour
 
     void Update()
     {
-        duration = Time.deltaTime / 50;
+        duration = Time.deltaTime / 100;
 
         Turn();
         Die();
@@ -82,12 +82,12 @@ public class SpaceShipController : MonoBehaviour
             movement.y = joystick.Vertical;
             movement.x = joystick.Horizontal;
 
-            if(joystick.Horizontal >= 0.2f)
+            if(joystick.Horizontal >= 0.4f)
             {
                 rotation = new Vector3(0, 0, -rotate);
                 transform.Rotate(rotation * Time.deltaTime * moveSpeed);
             }
-            if (joystick.Horizontal <= -0.2f)
+            if (joystick.Horizontal <= -0.4f)
             {
                 rotation = new Vector3(0, 0, rotate);
                 transform.Rotate(rotation * Time.deltaTime * moveSpeed);
@@ -101,7 +101,7 @@ public class SpaceShipController : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
-            damage = UnityEngine.Random.Range(1,8);
+            damage = UnityEngine.Random.Range(1,7);
             currentHealth -= damage; 
             healthBar.fillAmount -= damage/75;
         }
@@ -110,7 +110,7 @@ public class SpaceShipController : MonoBehaviour
 
     void Die()
     {
-        if (healthBar.fillAmount <= 0.02f)
+        if (healthBar.fillAmount <= 0.005f)
         {
             Destroy(gameObject);
             deathScreen.SetActive(true);
@@ -121,7 +121,7 @@ public class SpaceShipController : MonoBehaviour
 
     void Win()
     {
-        if (healthBar.fillAmount >= 0.99f)
+        if (healthBar.fillAmount >= 0.95f)
         {
             audioSource.PlayOneShot(winSound);
             int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;

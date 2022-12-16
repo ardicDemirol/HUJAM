@@ -8,7 +8,6 @@ public class Teleport : MonoBehaviour
 
     [SerializeField] Transform[] teleportPoints;
     private float waitTime = 1f;
-    //private bool canMove = true;
     
 
     Rigidbody2D rigidbody;
