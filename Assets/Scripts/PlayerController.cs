@@ -83,25 +83,25 @@ public class PlayerController : MonoBehaviour
             if (joystick.Horizontal >= 0.75f)
             {
                 movement.x = runSpeed;
-                movement.y = 0.2f;
+                movement.y = 0f;
                 Debug.Log("x >= .2f");
             }
             else if (joystick.Horizontal <= -0.75f)
             {
                 movement.x = -runSpeed;
-                movement.y = 0.2f;
+                movement.y = 0f;
                 Debug.Log("x <= .2f");
             }
             else if (joystick.Vertical >= 0.5f)
             {
                 movement.y = runSpeed;
-                movement.x = 0.2f;
+                movement.x = 0f;
                 Debug.Log("y >= .5f");
             }
             else if (joystick.Vertical <= -0.5f)
             {
                 movement.y = -runSpeed;
-                movement.x = 0.2f;
+                movement.x = 0f;
                 Debug.Log("y <= .5f");
             }
             else

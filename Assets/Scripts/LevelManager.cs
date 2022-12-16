@@ -12,7 +12,6 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
-        Screen.orientation = ScreenOrientation.LandscapeLeft;
         nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
