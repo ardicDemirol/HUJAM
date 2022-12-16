@@ -54,7 +54,8 @@ public class TextDeneme : MonoBehaviour
 
     public void ShowAllText()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.touchCount > 0)
+
         {
             thisText.text = startText;
             StopAllCoroutines();

@@ -29,7 +29,6 @@ public class Teleport : MonoBehaviour
     void Update()
     {
         waitTime += Time.deltaTime;
-        Debug.Log(rigidbody.velocity);
     }
 
 
