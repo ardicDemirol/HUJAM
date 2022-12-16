@@ -126,7 +126,6 @@ public class SpaceShipController : MonoBehaviour
             audioSource.PlayOneShot(winSound);
             int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
             SceneManager.LoadScene(nextSceneIndex);
-            Debug.Log("Sahne yüklenmedi");
 
         }
 
