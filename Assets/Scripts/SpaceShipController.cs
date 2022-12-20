@@ -37,6 +37,8 @@ public class SpaceShipController : MonoBehaviour
     public Joystick joystick;
     Vector2 movement;
 
+
+
     private void Awake()
     {
         spaceShipController = this;
@@ -44,7 +46,7 @@ public class SpaceShipController : MonoBehaviour
 
     private void Start()
     {
-        
+
         audioSource = GetComponent<AudioSource>();
         enemy = GetComponent<FollowEnemy>();
         levelManager = GetComponent<LevelManager>();
@@ -79,7 +81,6 @@ public class SpaceShipController : MonoBehaviour
             //    transform.Rotate(rotation * Time.deltaTime * moveSpeed);
             //}
 
-            movement.y = joystick.Vertical;
             movement.x = joystick.Horizontal;
 
             if(joystick.Horizontal >= 0.4f)

@@ -9,6 +9,7 @@ public class EnemySpawner : MonoBehaviour
 
     [SerializeField] Transform[] spawnPositions;
     [SerializeField] GameObject[] enemyPrefab = new GameObject[4];
+   
 
     [SerializeField] float timeBetweenSpawns = 2;
 
@@ -25,7 +26,7 @@ public class EnemySpawner : MonoBehaviour
         {
             int randomSpawnPosition = UnityEngine.Random.Range(0,spawnPositions.Length);
             int randomEnemyIndex = UnityEngine.Random.Range(0,enemyPrefab.Length );
-            Instantiate(enemyPrefab[randomEnemyIndex], spawnPositions[randomSpawnPosition].transform.position, Quaternion.identity);
+            Instantiate(enemyPrefab[randomEnemyIndex], spawnPositions[randomSpawnPosition].transform.position,Quaternion.identity);
             yield return new WaitForSeconds(timeBetweenSpawns);
         }
     }

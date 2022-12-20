@@ -120,7 +120,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1046905940}
   m_LocalRotation: {x: -0.000000043713438, y: -0.1289761, z: -0.000000005685476, w: 0.9916477}
-  m_LocalPosition: {x: 1.9999999, y: 0, z: -10}
+  m_LocalPosition: {x: 2, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -270,12 +270,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 143022012792154713}
-  walkSpeed: 15
-  runSpeed: 10
-  jumpPower: 20
+  runSpeed: 3
   deathScreen: {fileID: 0}
   audioSource: {fileID: 6364474778290494153}
-  deathSound: {fileID: 8300000, guid: 17a7331a6fcde3341b4a55c0a15c4489, type: 3}
+  deathSound: {fileID: 8300000, guid: 516aff69c1570c74986ef6fdcb55ff3d, type: 3}
+  gameplayAudio: {fileID: 8300000, guid: 4ac7500836347ca42a6057471729ee65, type: 3}
+  canMove: 1
+  joystick: {fileID: 0}
 --- !u!50 &143022012792154713
 Rigidbody2D:
   serializedVersion: 4
@@ -326,8 +327,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  audioSource: {fileID: 0}
-  teleportSound: {fileID: 0}
+  audioSource: {fileID: 6364474778290494153}
+  teleportSound: {fileID: 8300000, guid: a33c0388fba2628489f555f0ead5bbdb, type: 3}
 --- !u!70 &2673101170408142512
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -341,8 +342,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.7017906}
-  m_Size: {x: 1.05, y: 1.4807434}
+  m_Offset: {x: -0.0024061203, y: 0.6269833}
+  m_Size: {x: 0.8522619, y: 1.2637557}
   m_Direction: 0
 --- !u!95 &1493427896
 Animator:

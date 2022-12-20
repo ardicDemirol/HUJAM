@@ -11,20 +11,28 @@ public class FollowEnemy : MonoBehaviour
     [SerializeField] GameObject explosionEffect;
     [SerializeField] GameObject explosionEffect2;
 
+
     public float count;
 
     void Awake()
     {
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
     }
+
     private void Start()
     {
         int health = enemyHealth;
+
+        Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        diff.Normalize();
+        float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
+
     }
 
     void Update()
     {
-        float speed = UnityEngine.Random.Range(0.005f, 3f);
+        float speed = UnityEngine.Random.Range(0.005f, 2.25f);
         transform.position = Vector2.MoveTowards(transform.position, playerPos.position, speed * Time.deltaTime);
     }
 
@@ -55,7 +63,7 @@ public class FollowEnemy : MonoBehaviour
 
     public float Count()
     {
-        count /= 75;
+        count /= 100;
         return count;
     }
    
